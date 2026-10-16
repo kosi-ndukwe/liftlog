@@ -36,9 +36,9 @@ final class Routine {
         return tally.max { $0.value < $1.value }?.key.rawValue
     }
 
-    /// When this routine was last done.
+    /// When this routine was last finished (a workout in progress doesn't count).
     var lastDone: Date? {
-        sessions.map(\.start).max()
+        sessions.filter { $0.end != nil }.map(\.start).max()
     }
 
     /// Adds an exercise to the end of the routine.

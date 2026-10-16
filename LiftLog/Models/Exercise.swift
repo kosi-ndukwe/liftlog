@@ -39,8 +39,10 @@ final class Exercise {
 
     /// Works out `loggedSetCount` and `lastLogged` from the sets.
     func refreshStats() {
-        loggedSetCount = sets.count
-        lastLogged = sets.compactMap { $0.session?.start }.max()
+        // A set deleted in this save hasn't left the relationship yet.
+        let live = sets.filter { !$0.isDeleted }
+        loggedSetCount = live.count
+        lastLogged = live.compactMap { $0.session?.start }.max()
         statsVersion = Self.currentStatsVersion
     }
 

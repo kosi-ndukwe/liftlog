@@ -3,7 +3,8 @@ import SwiftUI
 
 /// The Log tab: past workouts on a timeline, newest first. Tap one for details.
 struct HistoryView: View {
-    @Query(sort: \WorkoutSession.start, order: .reverse) private var sessions: [WorkoutSession]
+    @Query(filter: #Predicate<WorkoutSession> { $0.end != nil }, sort: \WorkoutSession.start, order: .reverse)
+    private var sessions: [WorkoutSession]
 
     var body: some View {
         NavigationStack {

@@ -7,6 +7,7 @@ struct SettingsView: View {
     @Environment(\.modelContext) private var modelContext
     @State private var isPickingFile = false
     @State private var importState = ImportState.idle
+    @AppStorage("restSeconds") private var restSeconds = 90
 
     enum ImportState {
         case idle
@@ -41,6 +42,27 @@ struct SettingsView: View {
                             .foregroundStyle(Palette.textSecondary)
                     }
                     .card()
+
+                    Text("Workouts")
+                        .statLabelStyle()
+                    HStack {
+                        Text("Rest timer")
+                            .font(.bodyText)
+                            .foregroundStyle(Palette.textPrimary)
+                        Spacer()
+                        Picker("Rest timer", selection: $restSeconds) {
+                            Text("Off").tag(0)
+                            Text("1:00").tag(60)
+                            Text("1:30").tag(90)
+                            Text("2:00").tag(120)
+                            Text("3:00").tag(180)
+                        }
+                        .tint(Palette.accent)
+                    }
+                    .card()
+                    Text("Starts counting down each time you tick a set off.")
+                        .font(.caption)
+                        .foregroundStyle(Palette.textSecondary)
 
                     Text("Units")
                         .statLabelStyle()

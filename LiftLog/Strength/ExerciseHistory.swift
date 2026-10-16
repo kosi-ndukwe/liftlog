@@ -117,7 +117,7 @@ struct ExerciseHistory {
     init(sets: [SetEntry]) {
         var setsBySession: [PersistentIdentifier: (session: WorkoutSession, sets: [SetEntry])] = [:]
         for set in sets {
-            guard let session = set.session else { continue }
+            guard let session = set.session, session.end != nil else { continue }
             setsBySession[session.persistentModelID, default: (session, [])].sets.append(set)
         }
         let sessions = setsBySession.values

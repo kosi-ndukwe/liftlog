@@ -4,6 +4,10 @@ import SwiftUI
 /// Saved routines. Starting a workout and the step count come in later milestones.
 struct TodayView: View {
     @Query(sort: \Routine.createdAt) private var routines: [Routine]
+    @Query(filter: #Predicate<WorkoutSession> { $0.end == nil }, sort: \WorkoutSession.start, order: .reverse)
+    private var inProgress: [WorkoutSession]
+    @Environment(\.modelContext) private var modelContext
+    @State private var active: WorkoutSession?
 
     var body: some View {
         NavigationStack {
@@ -13,6 +17,30 @@ struct TodayView: View {
                         .font(.sectionTitle)
                         .foregroundStyle(Palette.textPrimary)
                         .padding(.top, 8)
+
+                    if let session = inProgress.first {
+                        Button {
+                            active = session
+                        } label: {
+                            HStack(spacing: 14) {
+                                Circle().fill(Palette.accent).frame(width: 12, height: 12)
+                                VStack(alignment: .leading, spacing: 4) {
+                                    Text("Workout in progress")
+                                        .font(.rowTitle)
+                                        .foregroundStyle(Palette.textPrimary)
+                                    Text("\(session.title) · started " + session.start.formatted(.dateTime.hour().minute()) + " · \(session.completedCount) sets done")
+                                        .font(.caption)
+                                        .foregroundStyle(Palette.textSecondary)
+                                }
+                                Spacer()
+                                Text("Resume")
+                                    .font(.system(size: 15, weight: .bold))
+                                    .foregroundStyle(Palette.accent)
+                            }
+                            .card()
+                        }
+                        .buttonStyle(.plain)
+                    }
 
                     if routines.isEmpty {
                         ContentUnavailableView(
@@ -31,15 +59,40 @@ struct TodayView: View {
                             .buttonStyle(.plain)
                         }
                     }
+
+                    Button {
+                        start(routine: nil)
+                    } label: {
+                        Label("Start an empty workout", systemImage: "plus")
+                            .font(.rowTitle)
+                            .foregroundStyle(Palette.accent)
+                            .padding(.vertical, 8)
+                    }
                 }
                 .padding(.horizontal, 16)
                 .padding(.bottom, 24)
             }
             .screenBackground()
             .toolbar(.hidden, for: .navigationBar)
-            .navigationDestination(for: Routine.self) { RoutineDetailView(routine: $0) }
+            .fullScreenCover(item: $active) { session in
+                ActiveWorkoutView(session: session)
+                    .preferredColorScheme(.dark)
+            }
+            .navigationDestination(for: Routine.self) { RoutineDetailView(routine: $0, onStart: start) }
             .navigationDestination(for: Exercise.self) { ExerciseDetailView(exercise: $0) }
             .navigationDestination(for: WorkoutSession.self) { WorkoutDetailView(session: $0) }
+        }
+    }
+
+    private func start(routine: Routine?) {
+        if let session = inProgress.first {
+            active = session
+            return
+        }
+        do {
+            active = try WorkoutLogger.start(routine: routine, in: modelContext)
+        } catch {
+            print("Couldn't start the workout: \(error)")
         }
     }
 }
@@ -95,9 +148,10 @@ struct MuscleGroupBadge: View {
     }
 }
 
-/// A routine's exercises, each with what you did last time.
+/// A routine's exercises, each with what you did last time, and a Start button.
 struct RoutineDetailView: View {
     let routine: Routine
+    var onStart: (Routine?) -> Void = { _ in }
 
     var body: some View {
         ScrollView {
@@ -125,6 +179,12 @@ struct RoutineDetailView: View {
         }
         .screenBackground()
         .navigationBarTitleDisplayMode(.inline)
+        .safeAreaInset(edge: .bottom) {
+            Button("Start Workout") { onStart(routine) }
+                .buttonStyle(PillButtonStyle())
+                .padding(.horizontal, 16)
+                .padding(.bottom, 8)
+        }
     }
 
     /// "4 sets · 8 reps · 135 lb" from the most recent workout of this routine,
