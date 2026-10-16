@@ -15,6 +15,9 @@ struct ExerciseDetailView: View {
     var body: some View {
         ScrollView {
             VStack(alignment: .leading, spacing: 16) {
+                if !exercise.primary.isEmpty {
+                    musclesCard
+                }
                 SegmentedPill(options: Tab.allCases, selection: $tab) { $0 == .results ? "Results" : "Trends" }
                     .padding(.top, 4)
 
@@ -47,6 +50,40 @@ struct ExerciseDetailView: View {
             // Worked out once when the screen opens; an exercise can have thousands of sets.
             if history == nil { history = ExerciseHistory(exercise: exercise) }
         }
+    }
+
+    /// Front and back with this exercise's muscles lit up, and their names.
+    private var musclesCard: some View {
+        let shading = Dictionary(uniqueKeysWithValues: exercise.primary.map { ($0, 1.0) })
+            .merging(exercise.secondary.map { ($0, 0.4) }, uniquingKeysWith: max)
+        return HStack(spacing: 16) {
+            BodyPair(shading: shading)
+                .frame(height: 120)
+            VStack(alignment: .leading, spacing: 8) {
+                VStack(alignment: .leading, spacing: 2) {
+                    Text("Works").statLabelStyle()
+                    Text(exercise.primary.map(\.label).joined(separator: ", "))
+                        .font(.bodyText)
+                        .foregroundStyle(Palette.textPrimary)
+                }
+                if !exercise.secondary.isEmpty {
+                    VStack(alignment: .leading, spacing: 2) {
+                        Text("Also").statLabelStyle()
+                        Text(exercise.secondary.map(\.label).joined(separator: ", "))
+                            .font(.caption)
+                            .foregroundStyle(Palette.textSecondary)
+                    }
+                }
+                if let equipment = Equipment(rawValue: exercise.equipment), equipment != .other {
+                    Text(equipment.label)
+                        .font(.caption)
+                        .foregroundStyle(Palette.textMuted)
+                }
+            }
+            Spacer(minLength: 0)
+        }
+        .card()
+        .padding(.top, 4)
     }
 
     // MARK: Results

@@ -32,13 +32,10 @@ struct WorkoutDetailView: View {
 
     private var header: some View {
         VStack(spacing: 10) {
-            let groups = muscleGroups
-            if !groups.isEmpty {
-                HStack(spacing: 8) {
-                    ForEach(groups) { group in
-                        MuscleGroupBadge(group: group, size: 48)
-                    }
-                }
+            let load = MuscleLoad(sets: session.sets)
+            if !load.isEmpty {
+                BodyPair(shading: load.shading)
+                    .frame(height: 150)
             }
             Text(session.title)
                 .font(.heroTitle)
@@ -73,7 +70,7 @@ struct WorkoutDetailView: View {
         VStack(alignment: .leading, spacing: 10) {
             NavigationLink(value: group.exercise) {
                 HStack(alignment: .top, spacing: 14) {
-                    ExerciseThumbnail(exercise: group.exercise)
+                    MuscleThumbnail(exercise: group.exercise)
                         .overlay(alignment: .bottomTrailing) {
                             HexBadge(systemImage: "checkmark", fill: Palette.done, foreground: Palette.background, size: 24)
                                 .offset(x: 6, y: 6)
@@ -117,14 +114,6 @@ struct WorkoutDetailView: View {
         return session.exercisesInOrder.map { exercise in
             (exercise, ordered.filter { $0.exercise == exercise })
         }
-    }
-
-    /// Push / pull / legs / core, in the order they first appear.
-    private var muscleGroups: [MuscleGroup] {
-        var seen = Set<MuscleGroup>()
-        return session.exercisesInOrder
-            .flatMap { $0.primary.map(\.group) }
-            .filter { seen.insert($0).inserted }
     }
 
     /// An exercise's best-ever value that was set in this workout. Worked out
