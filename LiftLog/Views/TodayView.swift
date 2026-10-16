@@ -149,7 +149,7 @@ struct ExerciseRow: View {
 
     var body: some View {
         HStack(spacing: 14) {
-            ExerciseThumbnail(exercise: exercise)
+            MuscleThumbnail(exercise: exercise)
             VStack(alignment: .leading, spacing: 4) {
                 Text(exercise.name)
                     .font(.rowTitle)

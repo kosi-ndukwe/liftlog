@@ -30,6 +30,7 @@ struct HistoryView: View {
             .toolbar(.hidden, for: .navigationBar)
             .navigationDestination(for: WorkoutSession.self) { WorkoutDetailView(session: $0) }
             .navigationDestination(for: Exercise.self) { ExerciseDetailView(exercise: $0) }
+            .navigationDestination(for: LogRoute.self) { _ in MusclesView() }
         }
     }
 
@@ -49,6 +50,11 @@ struct HistoryView: View {
 
             WeekStrip(workoutDays: thisWeek)
 
+            NavigationLink(value: LogRoute.muscles) {
+                MusclesCard(sessions: thisWeekSessions)
+            }
+            .buttonStyle(.plain)
+
             Text("Past Workouts")
                 .font(.sectionTitle)
                 .foregroundStyle(Palette.textPrimary)
@@ -58,16 +64,15 @@ struct HistoryView: View {
         .padding(.bottom, 16)
     }
 
+    /// Workouts since the start of this week (the list is newest first).
+    private var thisWeekSessions: [WorkoutSession] {
+        guard let weekStart = Calendar.current.dateInterval(of: .weekOfYear, for: .now)?.start else { return [] }
+        return Array(sessions.prefix { $0.start >= weekStart })
+    }
+
     /// The days this week that had a workout.
     private var thisWeek: Set<Int> {
-        let calendar = Calendar.current
-        guard let weekStart = calendar.dateInterval(of: .weekOfYear, for: .now)?.start else { return [] }
-        var days = Set<Int>()
-        for session in sessions {
-            guard session.start >= weekStart else { break } // newest first
-            days.insert(calendar.component(.weekday, from: session.start))
-        }
-        return days
+        Set(thisWeekSessions.map { Calendar.current.component(.weekday, from: $0.start) })
     }
 
     private var thisYear: Int {
@@ -75,6 +80,10 @@ struct HistoryView: View {
         guard let yearStart = calendar.dateInterval(of: .year, for: .now)?.start else { return 0 }
         return sessions.prefix { $0.start >= yearStart }.count
     }
+}
+
+enum LogRoute: Hashable {
+    case muscles
 }
 
 /// SU MO TU WE TH FR SA with today bold and a dot under days you trained.
