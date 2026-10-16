@@ -109,11 +109,11 @@ struct FitbodImporterTests {
         importer = FitbodImporter(modelContainer: container)
     }
 
-    /// Two workouts, newest first, like Fitbod's export.
+    /// Two workouts, newest first, with each workout's sets in the order done, like Fitbod's export.
     private let twoWorkouts = csv([
-        line("2026-10-15 21:33:03 +0000", "Cable Row", reps: 12),
-        line("2026-10-15 21:33:03 +0000", "Deadlift", reps: 5),
         line("2026-10-15 21:33:03 +0000", "Deadlift", reps: 8, warmup: true),
+        line("2026-10-15 21:33:03 +0000", "Deadlift", reps: 5),
+        line("2026-10-15 21:33:03 +0000", "Cable Row", reps: 12),
         line("2026-10-13 20:00:00 +0000", "Back Squat", reps: 5),
     ])
 
@@ -127,7 +127,7 @@ struct FitbodImporterTests {
         let sessions = try context.fetch(FetchDescriptor<WorkoutSession>(sortBy: [SortDescriptor(\.start)]))
         #expect(sessions.map(\.sets.count) == [1, 3])
 
-        // Sets are stored oldest first: the warm-up came before the working set.
+        // Sets keep the file's order: the warm-up came before the working set.
         let latest = try #require(sessions.last)
         #expect(latest.orderedSets.map(\.reps) == [8, 5, 12])
         #expect(latest.orderedSets.first?.isWarmup == true)
@@ -147,22 +147,32 @@ struct FitbodImporterTests {
 
     @Test func buildsRoutinesFromRepeatedWorkouts() async throws {
         var lines: [String] = []
-        // "Push" done 3 times, newest with press first; "Legs" done once.
-        for day in [20, 18, 16] {
-            let date = "2026-10-\(day) 18:00:00 +0000"
-            let order = day == 20 ? ["Pushdown", "Shoulder Press", "Bench Press"] : ["Pushdown", "Bench Press", "Shoulder Press"]
-            lines += order.map { line(date, $0) }
+        // A push day done 4 times with small changes, newest first.
+        let pushDays = [
+            20: ["Bench Press", "Shoulder Press", "Pushdown"],
+            18: ["Shoulder Press", "Bench Press", "Pushdown", "Fly"],
+            16: ["Bench Press", "Shoulder Press", "Pushdown"],
+            12: ["Bench Press", "Shoulder Press", "Pushdown", "Lateral Raise"],
+        ]
+        for (day, exercises) in pushDays.sorted(by: { $0.key > $1.key }) {
+            lines += exercises.map { line("2026-10-\(day) 18:00:00 +0000", $0) }
         }
-        lines.append(line("2026-10-14 18:00:00 +0000", "Leg Press"))
+        // One-exercise cardio sessions shouldn't become routines, however often they happen.
+        for day in [19, 17, 15, 13, 11] {
+            lines.append(line("2026-10-\(day) 07:00:00 +0000", "Cycling", reps: 0, kg: 0))
+        }
+        // A legs day done once.
+        lines += ["Back Squat", "Leg Press", "Leg Curl"].map { line("2026-10-14 18:00:00 +0000", $0) }
 
         let summary = try await importer.importCSV(csv(lines))
         #expect(summary.routinesAdded == 1)
 
         let routine = try #require(try context.fetch(FetchDescriptor<Routine>()).first)
-        // Order comes from the most recent workout (file lines are newest last within a workout).
+        // Fly and Lateral Raise were each done once, so they're left out.
+        // The order comes from the most recent workout.
         #expect(routine.orderedExercises.map(\.name) == ["Bench Press", "Shoulder Press", "Pushdown"])
         #expect(routine.name == "Bench Press, Shoulder Press + 1 more")
-        #expect(routine.sessions.count == 3)
+        #expect(routine.sessions.count == 4)
 
         let again = try await importer.importCSV(csv(lines))
         #expect(again.routinesAdded == 0)

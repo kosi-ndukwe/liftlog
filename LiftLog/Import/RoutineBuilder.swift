@@ -3,15 +3,18 @@ import SwiftData
 
 /// Turns workouts you've repeated into saved routines.
 ///
-/// Two workouts count as "the same" when they contain the same exercises, in
-/// any order. A routine is made for each combination done at least
-/// `minimumRepeats` times in the last `lookbackDays`, and its exercise order
-/// comes from the most recent time you did it.
+/// Workouts change a little from week to week (an extra fly, dumbbells instead
+/// of a barbell), so two workouts count as the same routine when they share at
+/// least half their exercises. Only workouts with 3 or more exercises from the
+/// last `lookbackDays` are used, which leaves out single cardio sessions.
 enum RoutineBuilder {
     struct Options: Sendable {
-        var lookbackDays = 365
+        var lookbackDays = 180
+        var minimumExercises = 3
         var minimumRepeats = 3
-        var maximumRoutines = 8
+        var maximumRoutines = 6
+        /// Shared exercises ÷ all exercises across the two workouts.
+        var similarity = 0.5
     }
 
     /// Returns how many routines were created.
@@ -23,52 +26,84 @@ enum RoutineBuilder {
         guard let newest = sessions.first?.start else { return 0 }
         let cutoff = newest.addingTimeInterval(-Double(options.lookbackDays) * 86_400)
 
-        var routinesBySignature: [Set<String>: Routine] = [:]
-        for routine in try context.fetch(FetchDescriptor<Routine>()) {
-            routinesBySignature[Set(routine.orderedExercises.map(\.name))] = routine
-        }
-
-        // Sessions are newest first, so the first one seen for a signature is the latest.
-        var counts: [Set<String>: Int] = [:]
-        var latest: [Set<String>: WorkoutSession] = [:]
+        // Group recent workouts. Each group is compared against its newest workout.
+        var groups: [[WorkoutSession]] = []
         for session in sessions where session.start >= cutoff {
-            let signature = signature(of: session)
-            guard !signature.isEmpty else { continue }
-            counts[signature, default: 0] += 1
-            if latest[signature] == nil { latest[signature] = session }
+            let exercises = names(in: session)
+            guard exercises.count >= options.minimumExercises else { continue }
+            let best = groups.indices
+                .map { ($0, similarity(exercises, names(in: groups[$0][0]))) }
+                .max { $0.1 < $1.1 }
+            if let best, best.1 >= options.similarity {
+                groups[best.0].append(session)
+            } else {
+                groups.append([session])
+            }
         }
 
-        let popular = counts
-            .filter { $0.value >= options.minimumRepeats }
-            .sorted {
-                $0.value != $1.value
-                    ? $0.value > $1.value
-                    : (latest[$0.key]?.start ?? .distantPast) > (latest[$1.key]?.start ?? .distantPast)
-            }
+        var routines = try context.fetch(FetchDescriptor<Routine>())
+        var added = 0
+        let popular = groups
+            .filter { $0.count >= options.minimumRepeats }
+            .sorted { $0.count > $1.count }
             .prefix(options.maximumRoutines)
 
-        var added = 0
-        for (signature, _) in popular where routinesBySignature[signature] == nil {
-            guard let template = latest[signature] else { continue }
-            let exercises = exercisesInOrder(template)
+        for group in popular {
+            let exercises = coreExercises(of: group)
+            let core = Set(exercises.map(\.name))
+            // Skip it if an existing routine already covers it (for example on a re-import).
+            guard !routines.contains(where: { similarity(core, Set($0.orderedExercises.map(\.name))) >= options.similarity })
+            else { continue }
+
             let routine = Routine(name: name(for: exercises))
             context.insert(routine)
             exercises.forEach(routine.append)
-            routinesBySignature[signature] = routine
+            routines.append(routine)
             added += 1
         }
 
-        // Link past workouts to the routine they match, so History can show its name.
+        // Link past workouts to the routine they're closest to, so History can show its name.
+        let routineNames = routines.map { ($0, Set($0.orderedExercises.map(\.name))) }
         for session in sessions where session.routine == nil {
-            session.routine = routinesBySignature[signature(of: session)]
+            let exercises = names(in: session)
+            guard exercises.count >= options.minimumExercises else { continue }
+            let best = routineNames
+                .map { ($0.0, similarity(exercises, $0.1)) }
+                .max { $0.1 < $1.1 }
+            if let best, best.1 >= options.similarity {
+                session.routine = best.0
+            }
         }
 
         return added
     }
 
-    /// The names of the exercises in a workout, ignoring order.
-    static func signature(of session: WorkoutSession) -> Set<String> {
+    /// Exercises done in at least half the group's workouts, in the order of the
+    /// most recent workout. Ones missing from it go at the end.
+    static func coreExercises(of group: [WorkoutSession]) -> [Exercise] {
+        var counts: [String: Int] = [:]
+        for session in group {
+            for name in names(in: session) { counts[name, default: 0] += 1 }
+        }
+        let isCore = { (exercise: Exercise) in Double(counts[exercise.name] ?? 0) >= Double(group.count) / 2 }
+
+        var seen = Set<String>()
+        var result: [Exercise] = []
+        for session in group {
+            for exercise in exercisesInOrder(session) where isCore(exercise) && seen.insert(exercise.name).inserted {
+                result.append(exercise)
+            }
+        }
+        return result
+    }
+
+    static func names(in session: WorkoutSession) -> Set<String> {
         Set(session.sets.compactMap { $0.exercise?.name })
+    }
+
+    static func similarity(_ a: Set<String>, _ b: Set<String>) -> Double {
+        let union = a.union(b).count
+        return union == 0 ? 0 : Double(a.intersection(b).count) / Double(union)
     }
 
     /// Each exercise once, in the order it was first done.

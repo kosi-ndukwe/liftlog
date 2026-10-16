@@ -53,8 +53,8 @@ actor FitbodImporter {
             let session = WorkoutSession(start: date, end: date)
             modelContext.insert(session)
 
-            // Sets within a workout are also listed newest first, so reverse them.
-            for (order, row) in (rowsByDate[date] ?? []).reversed().enumerated() {
+            // Within a workout, sets are listed in the order they were done.
+            for (order, row) in (rowsByDate[date] ?? []).enumerated() {
                 let exercise: Exercise
                 if let existing = exercisesByName[row.exercise] {
                     exercise = existing
