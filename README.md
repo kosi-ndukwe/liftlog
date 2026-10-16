@@ -12,3 +12,7 @@ See [docs/PLAN.md](docs/PLAN.md) for the build plan and [docs/fitbod-import.md](
 
 Built on the Mac in Xcode. This repo keeps the Mac and the Windows PC in sync.
 Personal data exports go in `data/`, which git ignores, so they are never uploaded.
+
+- Open `LiftLog.xcodeproj` in Xcode, choose an iPhone simulator, and press ⌘R to run.
+- Press ⌘U to run the tests.
+- New Swift files added to the `LiftLog` folder are picked up by Xcode automatically.
