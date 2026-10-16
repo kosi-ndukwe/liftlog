@@ -24,3 +24,12 @@ One row per **set**. Rows are newest first.
 
 ## Most frequent exercises
 Barbell Shoulder Press, Barbell Bench Press, Cable Tricep Pushdown, Barbell Incline Bench Press, Back Squat, Machine Fly, Cable Row, Deadlift, Lat Pulldown, Dumbbell Shrug, Cable Face Pull, Low Cable Chest Fly, Cycling, Barbell Hip Thrust, Leg Press.
+
+## How LiftLog imports it
+Code is in `LiftLog/Import/`.
+
+- **Workouts:** rows that share a Date become one workout. Fitbod stores one time per workout, so start and end are the same.
+- **Set order:** sets within a workout are assumed to be listed newest first, like the workouts themselves, so they're reversed. Worth double-checking against a real workout once imported.
+- **Re-importing:** a workout whose Date is already in the app is skipped, so importing a newer export only adds new workouts.
+- **Unreadable lines** (no valid date or exercise, or wrong number of columns) are skipped and counted in the summary.
+- **Routines:** workouts from the 12 months before the newest one are grouped by their set of exercises, ignoring order. Any combination done at least 3 times becomes a routine (8 at most), with the exercise order from the most recent time. Matching past workouts are linked to the routine.
