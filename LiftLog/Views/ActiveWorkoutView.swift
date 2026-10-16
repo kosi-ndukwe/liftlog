@@ -148,7 +148,11 @@ struct ActiveWorkoutView: View {
             return
         }
         do {
-            try WorkoutLogger.finish(session, in: modelContext)
+            let saved = try WorkoutLogger.finish(session, in: modelContext)
+            if saved {
+                let context = modelContext
+                Task { await WorkoutHealthSync.run(for: session, in: context) }
+            }
             dismiss()
         } catch {
             print("Couldn't finish the workout: \(error)")
