@@ -17,13 +17,24 @@ enum PreviewData {
             context.insert(push)
             [bench, press, pushdown].forEach(push.append)
 
-            let session = WorkoutSession(start: .now.addingTimeInterval(-86_400), routine: push)
-            session.end = session.start.addingTimeInterval(3_600)
-            context.insert(session)
-            for (order, pounds) in [135.0, 155, 175].enumerated() {
-                let set = SetEntry(order: order, exercise: bench, reps: 8)
-                set.weightLb = pounds
-                session.sets.append(set)
+            // Sixteen weekly push days, getting a little stronger each week.
+            for week in 0..<16 {
+                let start = Date.now.addingTimeInterval(-Double(15 - week) * 7 * 86_400)
+                let session = WorkoutSession(start: start, end: start.addingTimeInterval(3_600), routine: push)
+                context.insert(session)
+                var order = 0
+                for (exercise, top) in [(bench, 175.0), (press, 95.0), (pushdown, 50.0)] {
+                    let warmup = SetEntry(order: order, exercise: exercise, reps: 10, isWarmup: true)
+                    warmup.weightLb = (top * 0.6).rounded()
+                    session.sets.append(warmup)
+                    order += 1
+                    for _ in 0..<3 {
+                        let set = SetEntry(order: order, exercise: exercise, reps: 8)
+                        set.weightLb = top + Double(week / 2) * 5
+                        session.sets.append(set)
+                        order += 1
+                    }
+                }
             }
 
             return container

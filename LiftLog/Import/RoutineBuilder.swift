@@ -90,7 +90,7 @@ enum RoutineBuilder {
         var seen = Set<String>()
         var result: [Exercise] = []
         for session in group {
-            for exercise in exercisesInOrder(session) where isCore(exercise) && seen.insert(exercise.name).inserted {
+            for exercise in session.exercisesInOrder where isCore(exercise) && seen.insert(exercise.name).inserted {
                 result.append(exercise)
             }
         }
@@ -104,12 +104,6 @@ enum RoutineBuilder {
     static func similarity(_ a: Set<String>, _ b: Set<String>) -> Double {
         let union = a.union(b).count
         return union == 0 ? 0 : Double(a.intersection(b).count) / Double(union)
-    }
-
-    /// Each exercise once, in the order it was first done.
-    static func exercisesInOrder(_ session: WorkoutSession) -> [Exercise] {
-        var seen = Set<String>()
-        return session.orderedSets.compactMap(\.exercise).filter { seen.insert($0.name).inserted }
     }
 
     /// For example "Barbell Bench Press, Cable Row + 3 more". You can rename routines later.

@@ -47,4 +47,24 @@ final class SetEntry {
         get { Weight.roundedToHalfPound(Weight.pounds(fromKg: weightKg)) }
         set { weightKg = Weight.kg(fromPounds: newValue) }
     }
+
+    /// "8 × 135 lb", "15 reps", or "30 min · 5.0 mi" for cardio.
+    var summary: String {
+        if weightKg > 0 && reps > 0 {
+            return "\(reps) × \(Weight.formattedPounds(fromKg: weightKg))"
+        }
+        if reps > 0 {
+            return "\(reps) reps"
+        }
+        var parts: [String] = []
+        if durationSeconds > 0 {
+            parts.append(durationSeconds < 60
+                ? "\(Int(durationSeconds)) s"
+                : (durationSeconds / 60).formatted(.number.precision(.fractionLength(0))) + " min")
+        }
+        if distanceMeters > 0 {
+            parts.append((distanceMeters / 1_609.344).formatted(.number.precision(.fractionLength(1))) + " mi")
+        }
+        return parts.isEmpty ? "—" : parts.joined(separator: " · ")
+    }
 }

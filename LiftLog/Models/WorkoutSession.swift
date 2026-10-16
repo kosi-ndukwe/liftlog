@@ -31,4 +31,17 @@ final class WorkoutSession {
     var duration: TimeInterval? {
         end.map { $0.timeIntervalSince(start) }
     }
+
+    /// Each exercise once, in the order it was first done.
+    var exercisesInOrder: [Exercise] {
+        var seen = Set<String>()
+        return orderedSets.compactMap(\.exercise).filter { seen.insert($0.name).inserted }
+    }
+
+    /// The routine's name, or the exercises done, e.g. "Cycling".
+    var title: String {
+        if let routine { return routine.name }
+        let exercises = exercisesInOrder
+        return exercises.isEmpty ? "Workout" : RoutineBuilder.name(for: exercises)
+    }
 }
