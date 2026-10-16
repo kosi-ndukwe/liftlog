@@ -17,27 +17,62 @@ struct SettingsView: View {
 
     var body: some View {
         NavigationStack {
-            List {
-                Section {
-                    Button {
-                        isPickingFile = true
-                    } label: {
-                        Label("Import Fitbod CSV", systemImage: "square.and.arrow.down")
-                    }
-                    .disabled(isImporting)
+            ScrollView {
+                VStack(alignment: .leading, spacing: 16) {
+                    Text("Settings")
+                        .font(.sectionTitle)
+                        .foregroundStyle(Palette.textPrimary)
+                        .padding(.top, 8)
 
-                    importStatus
-                } header: {
                     Text("Data")
-                } footer: {
-                    Text("Export your workout history from Fitbod as a CSV file and save it to Files. Importing again later only adds new workouts.")
-                }
+                        .statLabelStyle()
+                    VStack(alignment: .leading, spacing: 14) {
+                        Button {
+                            isPickingFile = true
+                        } label: {
+                            Label("Import Fitbod CSV", systemImage: "square.and.arrow.down")
+                                .font(.rowTitle)
+                                .foregroundStyle(isImporting ? Palette.textMuted : Palette.accent)
+                        }
+                        .disabled(isImporting)
+                        importStatus
+                        Text("Export your workout history from Fitbod as a CSV file and save it to Files. Importing again later only adds new workouts.")
+                            .font(.caption)
+                            .foregroundStyle(Palette.textSecondary)
+                    }
+                    .card()
 
-                Section("Units") {
-                    LabeledContent("Weight", value: "lb")
+                    Text("Units")
+                        .statLabelStyle()
+                    HStack {
+                        Text("Weight")
+                            .font(.bodyText)
+                            .foregroundStyle(Palette.textPrimary)
+                        Spacer()
+                        Text("lb")
+                            .font(.bodyText)
+                            .foregroundStyle(Palette.textSecondary)
+                    }
+                    .card()
+
+                    Text("About")
+                        .statLabelStyle()
+                    HStack {
+                        Text("Version")
+                            .font(.bodyText)
+                            .foregroundStyle(Palette.textPrimary)
+                        Spacer()
+                        Text(Bundle.main.infoDictionary?["CFBundleShortVersionString"] as? String ?? "—")
+                            .font(.bodyText)
+                            .foregroundStyle(Palette.textSecondary)
+                    }
+                    .card()
                 }
+                .padding(.horizontal, 16)
+                .padding(.bottom, 24)
             }
-            .navigationTitle("Settings")
+            .screenBackground()
+            .toolbar(.hidden, for: .navigationBar)
             .fileImporter(
                 isPresented: $isPickingFile,
                 allowedContentTypes: [.commaSeparatedText, .plainText]
@@ -65,15 +100,16 @@ struct SettingsView: View {
             HStack {
                 ProgressView()
                 Text("Importing…")
-                    .foregroundStyle(.secondary)
+                    .foregroundStyle(Palette.textSecondary)
             }
         case .finished(let summary):
             Text(Self.describe(summary))
-                .font(.subheadline)
+                .font(.caption)
+                .foregroundStyle(Palette.textPrimary)
         case .failed(let message):
             Label(message, systemImage: "exclamationmark.triangle")
-                .font(.subheadline)
-                .foregroundStyle(.red)
+                .font(.caption)
+                .foregroundStyle(Palette.accent)
         }
     }
 
@@ -115,4 +151,5 @@ struct SettingsView: View {
 #Preview {
     SettingsView()
         .modelContainer(PreviewData.container)
+        .preferredColorScheme(.dark)
 }

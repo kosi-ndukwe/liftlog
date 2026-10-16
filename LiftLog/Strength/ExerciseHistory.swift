@@ -5,25 +5,54 @@ import SwiftData
 /// without weight fall back to reps, then time, then distance.
 enum ExerciseMetric: Equatable {
     case oneRepMax
+    /// Assisted pull-ups and dips: how much help the machine gave. Less is stronger.
+    case assistance
     case reps
     case minutes
     case miles
 
     var title: String {
         switch self {
-        case .oneRepMax: "Estimated 1RM"
-        case .reps: "Best set (reps)"
+        case .oneRepMax: "Est. 1 Rep Max"
+        case .assistance: "Assistance"
+        case .reps: "Best set"
         case .minutes: "Time"
         case .miles: "Distance"
         }
     }
 
-    func format(_ value: Double) -> String {
+    /// The unit shown small beside a big number.
+    var unit: String {
         switch self {
-        case .oneRepMax: value.formatted(.number.precision(.fractionLength(0))) + " lb"
-        case .reps: value.formatted(.number.precision(.fractionLength(0))) + " reps"
-        case .minutes: value.formatted(.number.precision(.fractionLength(0))) + " min"
-        case .miles: value.formatted(.number.precision(.fractionLength(1))) + " mi"
+        case .oneRepMax: "lb in 1 rep"
+        case .assistance: "lb of help · less is stronger"
+        case .reps: "reps in 1 set"
+        case .minutes: "min"
+        case .miles: "mi"
+        }
+    }
+
+    /// For assistance a smaller number is the better one.
+    var lowerIsBetter: Bool { self == .assistance }
+
+    func format(_ value: Double) -> String {
+        formatNumber(value) + " " + shortUnit
+    }
+
+    func formatNumber(_ value: Double) -> String {
+        switch self {
+        case .oneRepMax, .assistance: value.formatted(.number.precision(.fractionLength(0...1)))
+        case .reps, .minutes: value.formatted(.number.precision(.fractionLength(0)))
+        case .miles: value.formatted(.number.precision(.fractionLength(1)))
+        }
+    }
+
+    var shortUnit: String {
+        switch self {
+        case .oneRepMax, .assistance: "lb"
+        case .reps: "reps"
+        case .minutes: "min"
+        case .miles: "mi"
         }
     }
 }
@@ -39,8 +68,22 @@ struct ExerciseSession: Identifiable {
     var workingSets: [SetEntry] { sets.filter { !$0.isWarmup } }
 
     var bestOneRepMax: Double? {
-        workingSets.compactMap { Strength.estimatedOneRepMax(pounds: $0.weightLb, reps: $0.reps) }.max()
+        workingSets.filter { !$0.isAssisted }
+            .compactMap { Strength.estimatedOneRepMax(pounds: $0.weightLb, reps: $0.reps) }.max()
     }
+
+    /// The least help used in a working set, for assisted exercises.
+    var leastAssistance: Double? {
+        workingSets.filter { $0.isAssisted && $0.reps > 0 }.map(\.weightLb).min()
+    }
+
+    /// The heaviest working set.
+    var topWeight: Double? {
+        workingSets.filter { !$0.isAssisted && $0.weightLb > 0 }.map(\.weightLb).max()
+    }
+
+    /// reps × weight over every set, in lb.
+    var volumeLb: Double { sets.map(\.volumeLb).reduce(0, +) }
 
     var bestReps: Int { workingSets.map(\.reps).max() ?? 0 }
     var minutes: Double { sets.map(\.durationSeconds).reduce(0, +) / 60 }
@@ -49,6 +92,7 @@ struct ExerciseSession: Identifiable {
     func value(for metric: ExerciseMetric) -> Double? {
         let value: Double? = switch metric {
         case .oneRepMax: bestOneRepMax
+        case .assistance: leastAssistance
         case .reps: Double(bestReps)
         case .minutes: minutes
         case .miles: miles
@@ -83,6 +127,7 @@ struct ExerciseHistory {
 
         let metric: ExerciseMetric =
             if sessions.contains(where: { $0.bestOneRepMax != nil }) { .oneRepMax }
+            else if sessions.contains(where: { $0.leastAssistance != nil }) { .assistance }
             else if sessions.contains(where: { $0.bestReps > 0 }) { .reps }
             else if sessions.contains(where: { $0.minutes > 0 }) { .minutes }
             else { .miles }
@@ -96,5 +141,13 @@ struct ExerciseHistory {
     }
 
     var latest: ChartPoint? { points.last }
-    var best: ChartPoint? { points.max { $0.value < $1.value } }
+    /// The personal record: the biggest value, or the smallest for assistance.
+    var best: ChartPoint? {
+        metric.lowerIsBetter ? points.min { $0.value < $1.value } : points.max { $0.value < $1.value }
+    }
+
+    /// The mean of every point.
+    var average: Double? {
+        points.isEmpty ? nil : points.map(\.value).reduce(0, +) / Double(points.count)
+    }
 }

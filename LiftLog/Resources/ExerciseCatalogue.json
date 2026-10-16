@@ -1,0 +1,5161 @@
+[
+  {
+    "name": "1-Step Box Jump",
+    "equipment": "bodyweight",
+    "primary": [
+      "quads",
+      "glutes"
+    ],
+    "secondary": [
+      "calves",
+      "hamstrings"
+    ],
+    "kind": "bodyweight"
+  },
+  {
+    "name": "Ab Wheel Rollout",
+    "equipment": "other",
+    "primary": [
+      "abs"
+    ],
+    "secondary": [
+      "lowerBack",
+      "lats",
+      "frontDelts"
+    ],
+    "kind": "bodyweight"
+  },
+  {
+    "name": "Alternating Superman",
+    "equipment": "bodyweight",
+    "primary": [
+      "lowerBack",
+      "glutes"
+    ],
+    "secondary": [
+      "hamstrings",
+      "rearDelts"
+    ],
+    "kind": "bodyweight"
+  },
+  {
+    "name": "Archer Push Up",
+    "equipment": "bodyweight",
+    "primary": [
+      "chest"
+    ],
+    "secondary": [
+      "triceps",
+      "frontDelts",
+      "obliques"
+    ],
+    "kind": "bodyweight"
+  },
+  {
+    "name": "Arnold Dumbbell Press",
+    "equipment": "dumbbell",
+    "primary": [
+      "frontDelts",
+      "sideDelts"
+    ],
+    "secondary": [
+      "triceps",
+      "traps"
+    ],
+    "kind": "weight"
+  },
+  {
+    "name": "Assault Bike",
+    "equipment": "cardio",
+    "primary": [
+      "fullBody"
+    ],
+    "secondary": [
+      "quads",
+      "triceps"
+    ],
+    "kind": "cardio"
+  },
+  {
+    "name": "Assisted Chin Up",
+    "equipment": "machine",
+    "primary": [
+      "lats",
+      "biceps"
+    ],
+    "secondary": [
+      "upperBack",
+      "forearms"
+    ],
+    "kind": "assisted"
+  },
+  {
+    "name": "Assisted Close Grip Pull Up",
+    "equipment": "machine",
+    "primary": [
+      "lats",
+      "biceps"
+    ],
+    "secondary": [
+      "upperBack"
+    ],
+    "kind": "assisted"
+  },
+  {
+    "name": "Assisted Dip",
+    "equipment": "machine",
+    "primary": [
+      "triceps",
+      "chest"
+    ],
+    "secondary": [
+      "frontDelts"
+    ],
+    "kind": "assisted"
+  },
+  {
+    "name": "Assisted Neutral Grip Pull Up",
+    "equipment": "machine",
+    "primary": [
+      "lats"
+    ],
+    "secondary": [
+      "biceps",
+      "upperBack",
+      "forearms"
+    ],
+    "kind": "assisted"
+  },
+  {
+    "name": "Assisted Pull Up",
+    "equipment": "machine",
+    "primary": [
+      "lats"
+    ],
+    "secondary": [
+      "biceps",
+      "upperBack",
+      "forearms"
+    ],
+    "kind": "assisted"
+  },
+  {
+    "name": "Assisted Wide Grip Pull Up",
+    "equipment": "machine",
+    "primary": [
+      "lats"
+    ],
+    "secondary": [
+      "biceps",
+      "upperBack"
+    ],
+    "kind": "assisted"
+  },
+  {
+    "name": "Australian Pull Up",
+    "equipment": "bodyweight",
+    "primary": [
+      "upperBack",
+      "lats"
+    ],
+    "secondary": [
+      "biceps",
+      "rearDelts"
+    ],
+    "kind": "bodyweight"
+  },
+  {
+    "name": "Back Extensions",
+    "equipment": "bodyweight",
+    "primary": [
+      "lowerBack"
+    ],
+    "secondary": [
+      "glutes",
+      "hamstrings"
+    ],
+    "kind": "bodyweight"
+  },
+  {
+    "name": "Back Squat",
+    "equipment": "barbell",
+    "primary": [
+      "quads",
+      "glutes"
+    ],
+    "secondary": [
+      "hamstrings",
+      "lowerBack",
+      "adductors"
+    ],
+    "kind": "weight"
+  },
+  {
+    "name": "Band Bicep Curl",
+    "equipment": "band",
+    "primary": [
+      "biceps"
+    ],
+    "secondary": [
+      "forearms"
+    ],
+    "kind": "weight"
+  },
+  {
+    "name": "Band Chest Press",
+    "equipment": "band",
+    "primary": [
+      "chest"
+    ],
+    "secondary": [
+      "triceps",
+      "frontDelts"
+    ],
+    "kind": "weight"
+  },
+  {
+    "name": "Band Face Pull",
+    "equipment": "band",
+    "primary": [
+      "rearDelts"
+    ],
+    "secondary": [
+      "upperBack",
+      "traps"
+    ],
+    "kind": "weight"
+  },
+  {
+    "name": "Band Glute Bridge",
+    "equipment": "band",
+    "primary": [
+      "glutes"
+    ],
+    "secondary": [
+      "hamstrings"
+    ],
+    "kind": "weight"
+  },
+  {
+    "name": "Band Hip Abduction",
+    "equipment": "band",
+    "primary": [
+      "abductors"
+    ],
+    "secondary": [
+      "glutes"
+    ],
+    "kind": "weight"
+  },
+  {
+    "name": "Band Lateral Raise",
+    "equipment": "band",
+    "primary": [
+      "sideDelts"
+    ],
+    "secondary": [
+      "traps"
+    ],
+    "kind": "weight"
+  },
+  {
+    "name": "Band Lateral Walk",
+    "equipment": "band",
+    "primary": [
+      "abductors"
+    ],
+    "secondary": [
+      "glutes"
+    ],
+    "kind": "weight"
+  },
+  {
+    "name": "Band Pull Apart",
+    "equipment": "band",
+    "primary": [
+      "rearDelts",
+      "upperBack"
+    ],
+    "secondary": [
+      "traps"
+    ],
+    "kind": "weight"
+  },
+  {
+    "name": "Band Pull Through",
+    "equipment": "band",
+    "primary": [
+      "glutes",
+      "hamstrings"
+    ],
+    "secondary": [
+      "lowerBack"
+    ],
+    "kind": "weight"
+  },
+  {
+    "name": "Band Row",
+    "equipment": "band",
+    "primary": [
+      "lats",
+      "upperBack"
+    ],
+    "secondary": [
+      "biceps",
+      "rearDelts"
+    ],
+    "kind": "weight"
+  },
+  {
+    "name": "Band Squat",
+    "equipment": "band",
+    "primary": [
+      "quads",
+      "glutes"
+    ],
+    "secondary": [
+      "hamstrings"
+    ],
+    "kind": "weight"
+  },
+  {
+    "name": "Band Tricep Pushdown",
+    "equipment": "band",
+    "primary": [
+      "triceps"
+    ],
+    "secondary": [],
+    "kind": "weight"
+  },
+  {
+    "name": "Barbell Behind The Back Shrug",
+    "equipment": "barbell",
+    "primary": [
+      "traps"
+    ],
+    "secondary": [
+      "forearms"
+    ],
+    "kind": "weight"
+  },
+  {
+    "name": "Barbell Bench Press",
+    "equipment": "barbell",
+    "primary": [
+      "chest"
+    ],
+    "secondary": [
+      "triceps",
+      "frontDelts"
+    ],
+    "kind": "weight"
+  },
+  {
+    "name": "Barbell Bent Over Reverse Fly",
+    "equipment": "barbell",
+    "primary": [
+      "rearDelts"
+    ],
+    "secondary": [
+      "upperBack"
+    ],
+    "kind": "weight"
+  },
+  {
+    "name": "Barbell Box Squat",
+    "equipment": "barbell",
+    "primary": [
+      "quads",
+      "glutes"
+    ],
+    "secondary": [
+      "hamstrings",
+      "lowerBack"
+    ],
+    "kind": "weight"
+  },
+  {
+    "name": "Barbell Close Grip Bench Press",
+    "equipment": "barbell",
+    "primary": [
+      "triceps",
+      "chest"
+    ],
+    "secondary": [
+      "frontDelts"
+    ],
+    "kind": "weight"
+  },
+  {
+    "name": "Barbell Curl",
+    "equipment": "barbell",
+    "primary": [
+      "biceps"
+    ],
+    "secondary": [
+      "forearms"
+    ],
+    "kind": "weight"
+  },
+  {
+    "name": "Barbell Decline Bench Press",
+    "equipment": "barbell",
+    "primary": [
+      "chest"
+    ],
+    "secondary": [
+      "triceps",
+      "frontDelts"
+    ],
+    "kind": "weight"
+  },
+  {
+    "name": "Barbell Decline Skullcrusher",
+    "equipment": "barbell",
+    "primary": [
+      "triceps"
+    ],
+    "secondary": [],
+    "kind": "weight"
+  },
+  {
+    "name": "Barbell Deficit Deadlift",
+    "equipment": "barbell",
+    "primary": [
+      "hamstrings",
+      "glutes",
+      "lowerBack"
+    ],
+    "secondary": [
+      "quads",
+      "traps"
+    ],
+    "kind": "weight"
+  },
+  {
+    "name": "Barbell Drag Curl",
+    "equipment": "barbell",
+    "primary": [
+      "biceps"
+    ],
+    "secondary": [
+      "forearms",
+      "rearDelts"
+    ],
+    "kind": "weight"
+  },
+  {
+    "name": "Barbell Floor Press",
+    "equipment": "barbell",
+    "primary": [
+      "chest",
+      "triceps"
+    ],
+    "secondary": [
+      "frontDelts"
+    ],
+    "kind": "weight"
+  },
+  {
+    "name": "Barbell Front Squat",
+    "equipment": "barbell",
+    "primary": [
+      "quads"
+    ],
+    "secondary": [
+      "glutes",
+      "abs",
+      "lowerBack"
+    ],
+    "kind": "weight"
+  },
+  {
+    "name": "Barbell Glute Bridge",
+    "equipment": "barbell",
+    "primary": [
+      "glutes"
+    ],
+    "secondary": [
+      "hamstrings"
+    ],
+    "kind": "weight"
+  },
+  {
+    "name": "Barbell Good Morning",
+    "equipment": "barbell",
+    "primary": [
+      "hamstrings",
+      "lowerBack"
+    ],
+    "secondary": [
+      "glutes"
+    ],
+    "kind": "weight"
+  },
+  {
+    "name": "Barbell Hack Squat",
+    "equipment": "barbell",
+    "primary": [
+      "quads"
+    ],
+    "secondary": [
+      "glutes",
+      "hamstrings"
+    ],
+    "kind": "weight"
+  },
+  {
+    "name": "Barbell Hang Clean",
+    "equipment": "barbell",
+    "primary": [
+      "glutes",
+      "hamstrings",
+      "traps"
+    ],
+    "secondary": [
+      "quads",
+      "frontDelts",
+      "forearms"
+    ],
+    "kind": "weight"
+  },
+  {
+    "name": "Barbell Hip Thrust",
+    "equipment": "barbell",
+    "primary": [
+      "glutes"
+    ],
+    "secondary": [
+      "hamstrings",
+      "quads",
+      "adductors"
+    ],
+    "kind": "weight"
+  },
+  {
+    "name": "Barbell Incline Bench Press",
+    "equipment": "barbell",
+    "primary": [
+      "chest",
+      "frontDelts"
+    ],
+    "secondary": [
+      "triceps"
+    ],
+    "kind": "weight"
+  },
+  {
+    "name": "Barbell Incline Skullcrusher",
+    "equipment": "barbell",
+    "primary": [
+      "triceps"
+    ],
+    "secondary": [],
+    "kind": "weight"
+  },
+  {
+    "name": "Barbell Jefferson Deadlift",
+    "equipment": "barbell",
+    "primary": [
+      "quads",
+      "glutes",
+      "hamstrings"
+    ],
+    "secondary": [
+      "adductors",
+      "lowerBack"
+    ],
+    "kind": "weight"
+  },
+  {
+    "name": "Barbell Landmine Press",
+    "equipment": "barbell",
+    "primary": [
+      "frontDelts",
+      "chest"
+    ],
+    "secondary": [
+      "triceps",
+      "sideDelts"
+    ],
+    "kind": "weight"
+  },
+  {
+    "name": "Barbell Landmine Rotation",
+    "equipment": "barbell",
+    "primary": [
+      "obliques",
+      "abs"
+    ],
+    "secondary": [
+      "frontDelts"
+    ],
+    "kind": "weight"
+  },
+  {
+    "name": "Barbell Landmine Squat",
+    "equipment": "barbell",
+    "primary": [
+      "quads",
+      "glutes"
+    ],
+    "secondary": [
+      "abs"
+    ],
+    "kind": "weight"
+  },
+  {
+    "name": "Barbell Lunge",
+    "equipment": "barbell",
+    "primary": [
+      "quads",
+      "glutes"
+    ],
+    "secondary": [
+      "hamstrings",
+      "adductors"
+    ],
+    "kind": "weight"
+  },
+  {
+    "name": "Barbell Overhead Press",
+    "equipment": "barbell",
+    "primary": [
+      "frontDelts",
+      "sideDelts"
+    ],
+    "secondary": [
+      "triceps",
+      "traps",
+      "abs"
+    ],
+    "kind": "weight"
+  },
+  {
+    "name": "Barbell Pendlay Row",
+    "equipment": "barbell",
+    "primary": [
+      "lats",
+      "upperBack"
+    ],
+    "secondary": [
+      "biceps",
+      "rearDelts",
+      "lowerBack"
+    ],
+    "kind": "weight"
+  },
+  {
+    "name": "Barbell Power Clean",
+    "equipment": "barbell",
+    "primary": [
+      "glutes",
+      "hamstrings",
+      "traps"
+    ],
+    "secondary": [
+      "quads",
+      "lowerBack",
+      "forearms"
+    ],
+    "kind": "weight"
+  },
+  {
+    "name": "Barbell Preacher Curl",
+    "equipment": "barbell",
+    "primary": [
+      "biceps"
+    ],
+    "secondary": [
+      "forearms"
+    ],
+    "kind": "weight"
+  },
+  {
+    "name": "Barbell Pullover",
+    "equipment": "barbell",
+    "primary": [
+      "lats",
+      "chest"
+    ],
+    "secondary": [
+      "triceps"
+    ],
+    "kind": "weight"
+  },
+  {
+    "name": "Barbell Push Press",
+    "equipment": "barbell",
+    "primary": [
+      "frontDelts"
+    ],
+    "secondary": [
+      "triceps",
+      "sideDelts",
+      "quads"
+    ],
+    "kind": "weight"
+  },
+  {
+    "name": "Barbell Rack Pull",
+    "equipment": "barbell",
+    "primary": [
+      "lowerBack",
+      "traps",
+      "glutes"
+    ],
+    "secondary": [
+      "hamstrings",
+      "forearms"
+    ],
+    "kind": "weight"
+  },
+  {
+    "name": "Barbell Reverse Lunge",
+    "equipment": "barbell",
+    "primary": [
+      "quads",
+      "glutes"
+    ],
+    "secondary": [
+      "hamstrings",
+      "adductors"
+    ],
+    "kind": "weight"
+  },
+  {
+    "name": "Barbell Reverse Wrist Curl",
+    "equipment": "barbell",
+    "primary": [
+      "forearms"
+    ],
+    "secondary": [],
+    "kind": "weight"
+  },
+  {
+    "name": "Barbell Rollout",
+    "equipment": "barbell",
+    "primary": [
+      "abs"
+    ],
+    "secondary": [
+      "lowerBack",
+      "lats",
+      "frontDelts"
+    ],
+    "kind": "weight"
+  },
+  {
+    "name": "Barbell Seated Calf Raise",
+    "equipment": "barbell",
+    "primary": [
+      "calves"
+    ],
+    "secondary": [],
+    "kind": "weight"
+  },
+  {
+    "name": "Barbell Shoulder Press",
+    "equipment": "barbell",
+    "primary": [
+      "frontDelts"
+    ],
+    "secondary": [
+      "sideDelts",
+      "triceps",
+      "traps"
+    ],
+    "kind": "weight"
+  },
+  {
+    "name": "Barbell Shrug",
+    "equipment": "barbell",
+    "primary": [
+      "traps"
+    ],
+    "secondary": [
+      "forearms",
+      "upperBack"
+    ],
+    "kind": "weight"
+  },
+  {
+    "name": "Barbell Snatch",
+    "equipment": "barbell",
+    "primary": [
+      "fullBody"
+    ],
+    "secondary": [
+      "glutes",
+      "traps"
+    ],
+    "kind": "weight"
+  },
+  {
+    "name": "Barbell Split Squat",
+    "equipment": "barbell",
+    "primary": [
+      "quads",
+      "glutes"
+    ],
+    "secondary": [
+      "hamstrings",
+      "adductors"
+    ],
+    "kind": "weight"
+  },
+  {
+    "name": "Barbell Squat Jump",
+    "equipment": "barbell",
+    "primary": [
+      "quads",
+      "glutes"
+    ],
+    "secondary": [
+      "calves",
+      "hamstrings"
+    ],
+    "kind": "weight"
+  },
+  {
+    "name": "Barbell Step Up",
+    "equipment": "barbell",
+    "primary": [
+      "quads",
+      "glutes"
+    ],
+    "secondary": [
+      "hamstrings",
+      "calves"
+    ],
+    "kind": "weight"
+  },
+  {
+    "name": "Barbell Sumo Deadlift",
+    "equipment": "barbell",
+    "primary": [
+      "glutes",
+      "adductors",
+      "hamstrings"
+    ],
+    "secondary": [
+      "quads",
+      "lowerBack",
+      "traps"
+    ],
+    "kind": "weight"
+  },
+  {
+    "name": "Barbell Thruster",
+    "equipment": "barbell",
+    "primary": [
+      "quads",
+      "glutes",
+      "frontDelts"
+    ],
+    "secondary": [
+      "triceps",
+      "sideDelts"
+    ],
+    "kind": "weight"
+  },
+  {
+    "name": "Barbell Wide Grip Bench Press",
+    "equipment": "barbell",
+    "primary": [
+      "chest"
+    ],
+    "secondary": [
+      "frontDelts",
+      "triceps"
+    ],
+    "kind": "weight"
+  },
+  {
+    "name": "Barbell Wrist Curl",
+    "equipment": "barbell",
+    "primary": [
+      "forearms"
+    ],
+    "secondary": [],
+    "kind": "weight"
+  },
+  {
+    "name": "Barbell Zercher Squat",
+    "equipment": "barbell",
+    "primary": [
+      "quads",
+      "glutes"
+    ],
+    "secondary": [
+      "abs",
+      "lowerBack",
+      "biceps"
+    ],
+    "kind": "weight"
+  },
+  {
+    "name": "Barbell Zottman Curl",
+    "equipment": "barbell",
+    "primary": [
+      "biceps",
+      "forearms"
+    ],
+    "secondary": [],
+    "kind": "weight"
+  },
+  {
+    "name": "Battle Ropes",
+    "equipment": "other",
+    "primary": [
+      "fullBody"
+    ],
+    "secondary": [
+      "sideDelts",
+      "frontDelts"
+    ],
+    "kind": "weight"
+  },
+  {
+    "name": "Bear Crawl",
+    "equipment": "bodyweight",
+    "primary": [
+      "fullBody"
+    ],
+    "secondary": [
+      "frontDelts",
+      "abs",
+      "quads"
+    ],
+    "kind": "bodyweight"
+  },
+  {
+    "name": "Bench Dip",
+    "equipment": "bodyweight",
+    "primary": [
+      "triceps"
+    ],
+    "secondary": [
+      "chest",
+      "frontDelts"
+    ],
+    "kind": "bodyweight"
+  },
+  {
+    "name": "Bent Over Barbell Row",
+    "equipment": "barbell",
+    "primary": [
+      "lats",
+      "upperBack"
+    ],
+    "secondary": [
+      "biceps",
+      "rearDelts",
+      "lowerBack"
+    ],
+    "kind": "weight"
+  },
+  {
+    "name": "Bicycle Crunch",
+    "equipment": "bodyweight",
+    "primary": [
+      "abs",
+      "obliques"
+    ],
+    "secondary": [
+      "hipFlexors"
+    ],
+    "kind": "bodyweight"
+  },
+  {
+    "name": "Bird Dog",
+    "equipment": "bodyweight",
+    "primary": [
+      "lowerBack",
+      "glutes"
+    ],
+    "secondary": [
+      "rearDelts",
+      "abs"
+    ],
+    "kind": "bodyweight"
+  },
+  {
+    "name": "Bodyweight Calf Raise",
+    "equipment": "bodyweight",
+    "primary": [
+      "calves"
+    ],
+    "secondary": [],
+    "kind": "bodyweight"
+  },
+  {
+    "name": "Bodyweight Glute Bridge",
+    "equipment": "bodyweight",
+    "primary": [
+      "glutes"
+    ],
+    "secondary": [
+      "hamstrings"
+    ],
+    "kind": "bodyweight"
+  },
+  {
+    "name": "Bodyweight Good Morning",
+    "equipment": "bodyweight",
+    "primary": [
+      "hamstrings",
+      "lowerBack"
+    ],
+    "secondary": [
+      "glutes"
+    ],
+    "kind": "bodyweight"
+  },
+  {
+    "name": "Bodyweight Lunge",
+    "equipment": "bodyweight",
+    "primary": [
+      "quads",
+      "glutes"
+    ],
+    "secondary": [
+      "hamstrings"
+    ],
+    "kind": "bodyweight"
+  },
+  {
+    "name": "Bodyweight Reverse Lunge",
+    "equipment": "bodyweight",
+    "primary": [
+      "quads",
+      "glutes"
+    ],
+    "secondary": [
+      "hamstrings"
+    ],
+    "kind": "bodyweight"
+  },
+  {
+    "name": "Bodyweight Row",
+    "equipment": "bodyweight",
+    "primary": [
+      "upperBack",
+      "lats"
+    ],
+    "secondary": [
+      "biceps",
+      "rearDelts"
+    ],
+    "kind": "bodyweight"
+  },
+  {
+    "name": "Bodyweight Single Leg Calf Raise",
+    "equipment": "bodyweight",
+    "primary": [
+      "calves"
+    ],
+    "secondary": [],
+    "kind": "bodyweight"
+  },
+  {
+    "name": "Bodyweight Squat",
+    "equipment": "bodyweight",
+    "primary": [
+      "quads",
+      "glutes"
+    ],
+    "secondary": [
+      "hamstrings"
+    ],
+    "kind": "bodyweight"
+  },
+  {
+    "name": "Box Jump",
+    "equipment": "bodyweight",
+    "primary": [
+      "quads",
+      "glutes"
+    ],
+    "secondary": [
+      "hamstrings",
+      "calves"
+    ],
+    "kind": "bodyweight"
+  },
+  {
+    "name": "Broad Jump",
+    "equipment": "bodyweight",
+    "primary": [
+      "quads",
+      "glutes"
+    ],
+    "secondary": [
+      "hamstrings",
+      "calves"
+    ],
+    "kind": "bodyweight"
+  },
+  {
+    "name": "Bulgarian Split Squat",
+    "equipment": "bodyweight",
+    "primary": [
+      "quads",
+      "glutes"
+    ],
+    "secondary": [
+      "hamstrings",
+      "adductors"
+    ],
+    "kind": "bodyweight"
+  },
+  {
+    "name": "Burpee",
+    "equipment": "bodyweight",
+    "primary": [
+      "fullBody"
+    ],
+    "secondary": [
+      "chest",
+      "quads",
+      "triceps"
+    ],
+    "kind": "bodyweight"
+  },
+  {
+    "name": "Cable Bent Over Lateral Raise",
+    "equipment": "cable",
+    "primary": [
+      "rearDelts"
+    ],
+    "secondary": [
+      "upperBack"
+    ],
+    "kind": "weight"
+  },
+  {
+    "name": "Cable Bicep Curl",
+    "equipment": "cable",
+    "primary": [
+      "biceps"
+    ],
+    "secondary": [
+      "forearms"
+    ],
+    "kind": "weight"
+  },
+  {
+    "name": "Cable Chest Press",
+    "equipment": "cable",
+    "primary": [
+      "chest"
+    ],
+    "secondary": [
+      "triceps",
+      "frontDelts"
+    ],
+    "kind": "weight"
+  },
+  {
+    "name": "Cable Crossover Fly",
+    "equipment": "cable",
+    "primary": [
+      "chest"
+    ],
+    "secondary": [
+      "frontDelts"
+    ],
+    "kind": "weight"
+  },
+  {
+    "name": "Cable Crunch",
+    "equipment": "cable",
+    "primary": [
+      "abs"
+    ],
+    "secondary": [],
+    "kind": "weight"
+  },
+  {
+    "name": "Cable Face Pull",
+    "equipment": "cable",
+    "primary": [
+      "rearDelts"
+    ],
+    "secondary": [
+      "upperBack",
+      "traps",
+      "sideDelts"
+    ],
+    "kind": "weight"
+  },
+  {
+    "name": "Cable Front Raise",
+    "equipment": "cable",
+    "primary": [
+      "frontDelts"
+    ],
+    "secondary": [
+      "sideDelts"
+    ],
+    "kind": "weight"
+  },
+  {
+    "name": "Cable Glute Kickback",
+    "equipment": "cable",
+    "primary": [
+      "glutes"
+    ],
+    "secondary": [
+      "hamstrings"
+    ],
+    "kind": "weight"
+  },
+  {
+    "name": "Cable Hammer Curl",
+    "equipment": "cable",
+    "primary": [
+      "biceps"
+    ],
+    "secondary": [
+      "forearms"
+    ],
+    "kind": "weight"
+  },
+  {
+    "name": "Cable High Curl",
+    "equipment": "cable",
+    "primary": [
+      "biceps"
+    ],
+    "secondary": [
+      "forearms"
+    ],
+    "kind": "weight"
+  },
+  {
+    "name": "Cable Hip Abduction",
+    "equipment": "cable",
+    "primary": [
+      "abductors"
+    ],
+    "secondary": [
+      "glutes"
+    ],
+    "kind": "weight"
+  },
+  {
+    "name": "Cable Hip Adduction",
+    "equipment": "cable",
+    "primary": [
+      "adductors"
+    ],
+    "secondary": [],
+    "kind": "weight"
+  },
+  {
+    "name": "Cable Incline Chest Fly",
+    "equipment": "cable",
+    "primary": [
+      "chest",
+      "frontDelts"
+    ],
+    "secondary": [],
+    "kind": "weight"
+  },
+  {
+    "name": "Cable Internal Rotation",
+    "equipment": "cable",
+    "primary": [
+      "frontDelts"
+    ],
+    "secondary": [
+      "upperBack"
+    ],
+    "kind": "weight"
+  },
+  {
+    "name": "Cable Kneeling Crunch",
+    "equipment": "cable",
+    "primary": [
+      "abs"
+    ],
+    "secondary": [
+      "obliques"
+    ],
+    "kind": "weight"
+  },
+  {
+    "name": "Cable Lateral Raise",
+    "equipment": "cable",
+    "primary": [
+      "sideDelts"
+    ],
+    "secondary": [
+      "traps"
+    ],
+    "kind": "weight"
+  },
+  {
+    "name": "Cable Leg Curl",
+    "equipment": "cable",
+    "primary": [
+      "hamstrings"
+    ],
+    "secondary": [],
+    "kind": "weight"
+  },
+  {
+    "name": "Cable Leg Extension",
+    "equipment": "cable",
+    "primary": [
+      "quads"
+    ],
+    "secondary": [],
+    "kind": "weight"
+  },
+  {
+    "name": "Cable Oblique Crunch",
+    "equipment": "cable",
+    "primary": [
+      "obliques"
+    ],
+    "secondary": [
+      "abs"
+    ],
+    "kind": "weight"
+  },
+  {
+    "name": "Cable Overhead Curl",
+    "equipment": "cable",
+    "primary": [
+      "biceps"
+    ],
+    "secondary": [
+      "forearms"
+    ],
+    "kind": "weight"
+  },
+  {
+    "name": "Cable Pallof Press",
+    "equipment": "cable",
+    "primary": [
+      "obliques",
+      "abs"
+    ],
+    "secondary": [],
+    "kind": "weight"
+  },
+  {
+    "name": "Cable Preacher Curl",
+    "equipment": "cable",
+    "primary": [
+      "biceps"
+    ],
+    "secondary": [
+      "forearms"
+    ],
+    "kind": "weight"
+  },
+  {
+    "name": "Cable Pull Through",
+    "equipment": "cable",
+    "primary": [
+      "glutes",
+      "hamstrings"
+    ],
+    "secondary": [
+      "lowerBack"
+    ],
+    "kind": "weight"
+  },
+  {
+    "name": "Cable Rear Delt Row",
+    "equipment": "cable",
+    "primary": [
+      "rearDelts"
+    ],
+    "secondary": [
+      "upperBack",
+      "biceps"
+    ],
+    "kind": "weight"
+  },
+  {
+    "name": "Cable Reverse Fly",
+    "equipment": "cable",
+    "primary": [
+      "rearDelts"
+    ],
+    "secondary": [
+      "upperBack"
+    ],
+    "kind": "weight"
+  },
+  {
+    "name": "Cable Reverse Grip Tricep Pushdown",
+    "equipment": "cable",
+    "primary": [
+      "triceps"
+    ],
+    "secondary": [
+      "forearms"
+    ],
+    "kind": "weight"
+  },
+  {
+    "name": "Cable Reverse Wrist Curl",
+    "equipment": "cable",
+    "primary": [
+      "forearms"
+    ],
+    "secondary": [],
+    "kind": "weight"
+  },
+  {
+    "name": "Cable Rope Hammer Curls",
+    "equipment": "cable",
+    "primary": [
+      "biceps"
+    ],
+    "secondary": [
+      "forearms"
+    ],
+    "kind": "weight"
+  },
+  {
+    "name": "Cable Rope Overhead Triceps Extension",
+    "equipment": "cable",
+    "primary": [
+      "triceps"
+    ],
+    "secondary": [],
+    "kind": "weight"
+  },
+  {
+    "name": "Cable Rope Tricep Extension",
+    "equipment": "cable",
+    "primary": [
+      "triceps"
+    ],
+    "secondary": [],
+    "kind": "weight"
+  },
+  {
+    "name": "Cable Row",
+    "equipment": "cable",
+    "primary": [
+      "lats",
+      "upperBack"
+    ],
+    "secondary": [
+      "biceps",
+      "rearDelts",
+      "forearms"
+    ],
+    "kind": "weight"
+  },
+  {
+    "name": "Cable Shoulder External Rotation",
+    "equipment": "cable",
+    "primary": [
+      "rearDelts"
+    ],
+    "secondary": [
+      "upperBack"
+    ],
+    "kind": "weight"
+  },
+  {
+    "name": "Cable Shoulder External Rotation at 90°",
+    "equipment": "cable",
+    "primary": [
+      "rearDelts"
+    ],
+    "secondary": [
+      "upperBack"
+    ],
+    "kind": "weight"
+  },
+  {
+    "name": "Cable Shoulder Press",
+    "equipment": "cable",
+    "primary": [
+      "frontDelts",
+      "sideDelts"
+    ],
+    "secondary": [
+      "triceps"
+    ],
+    "kind": "weight"
+  },
+  {
+    "name": "Cable Shrugs",
+    "equipment": "cable",
+    "primary": [
+      "traps"
+    ],
+    "secondary": [
+      "forearms"
+    ],
+    "kind": "weight"
+  },
+  {
+    "name": "Cable Single Arm Chest Press",
+    "equipment": "cable",
+    "primary": [
+      "chest"
+    ],
+    "secondary": [
+      "triceps",
+      "frontDelts"
+    ],
+    "kind": "weight"
+  },
+  {
+    "name": "Cable Single Arm Curl",
+    "equipment": "cable",
+    "primary": [
+      "biceps"
+    ],
+    "secondary": [
+      "forearms"
+    ],
+    "kind": "weight"
+  },
+  {
+    "name": "Cable Single Arm Lateral Raise",
+    "equipment": "cable",
+    "primary": [
+      "sideDelts"
+    ],
+    "secondary": [
+      "traps"
+    ],
+    "kind": "weight"
+  },
+  {
+    "name": "Cable Single Arm Row",
+    "equipment": "cable",
+    "primary": [
+      "lats",
+      "upperBack"
+    ],
+    "secondary": [
+      "biceps",
+      "rearDelts"
+    ],
+    "kind": "weight"
+  },
+  {
+    "name": "Cable Single Arm Tricep Pushdown",
+    "equipment": "cable",
+    "primary": [
+      "triceps"
+    ],
+    "secondary": [],
+    "kind": "weight"
+  },
+  {
+    "name": "Cable Squat",
+    "equipment": "cable",
+    "primary": [
+      "quads",
+      "glutes"
+    ],
+    "secondary": [
+      "hamstrings"
+    ],
+    "kind": "weight"
+  },
+  {
+    "name": "Cable Straight Arm Pulldown",
+    "equipment": "cable",
+    "primary": [
+      "lats"
+    ],
+    "secondary": [
+      "triceps"
+    ],
+    "kind": "weight"
+  },
+  {
+    "name": "Cable Tricep Pushdown",
+    "equipment": "cable",
+    "primary": [
+      "triceps"
+    ],
+    "secondary": [],
+    "kind": "weight"
+  },
+  {
+    "name": "Cable Triceps Kickback",
+    "equipment": "cable",
+    "primary": [
+      "triceps"
+    ],
+    "secondary": [],
+    "kind": "weight"
+  },
+  {
+    "name": "Cable Upright Row",
+    "equipment": "cable",
+    "primary": [
+      "sideDelts",
+      "traps"
+    ],
+    "secondary": [
+      "biceps"
+    ],
+    "kind": "weight"
+  },
+  {
+    "name": "Cable V Bar Tricep Pushdown",
+    "equipment": "cable",
+    "primary": [
+      "triceps"
+    ],
+    "secondary": [],
+    "kind": "weight"
+  },
+  {
+    "name": "Cable Wide Grip Row",
+    "equipment": "cable",
+    "primary": [
+      "upperBack",
+      "rearDelts"
+    ],
+    "secondary": [
+      "lats",
+      "biceps"
+    ],
+    "kind": "weight"
+  },
+  {
+    "name": "Cable Woodchopper",
+    "equipment": "cable",
+    "primary": [
+      "obliques"
+    ],
+    "secondary": [
+      "abs",
+      "frontDelts"
+    ],
+    "kind": "weight"
+  },
+  {
+    "name": "Cable Wrist Curl",
+    "equipment": "cable",
+    "primary": [
+      "forearms"
+    ],
+    "secondary": [],
+    "kind": "weight"
+  },
+  {
+    "name": "Cable Y Raise",
+    "equipment": "cable",
+    "primary": [
+      "rearDelts",
+      "sideDelts"
+    ],
+    "secondary": [
+      "traps"
+    ],
+    "kind": "weight"
+  },
+  {
+    "name": "Calf Press",
+    "equipment": "machine",
+    "primary": [
+      "calves"
+    ],
+    "secondary": [],
+    "kind": "weight"
+  },
+  {
+    "name": "Captain's Chair Leg Raise",
+    "equipment": "bodyweight",
+    "primary": [
+      "abs",
+      "hipFlexors"
+    ],
+    "secondary": [
+      "obliques"
+    ],
+    "kind": "bodyweight"
+  },
+  {
+    "name": "Chest Dip",
+    "equipment": "bodyweight",
+    "primary": [
+      "chest"
+    ],
+    "secondary": [
+      "triceps",
+      "frontDelts"
+    ],
+    "kind": "bodyweight"
+  },
+  {
+    "name": "Chin Up",
+    "equipment": "bodyweight",
+    "primary": [
+      "lats",
+      "biceps"
+    ],
+    "secondary": [
+      "upperBack",
+      "forearms"
+    ],
+    "kind": "bodyweight"
+  },
+  {
+    "name": "Clamshell",
+    "equipment": "bodyweight",
+    "primary": [
+      "abductors",
+      "glutes"
+    ],
+    "secondary": [],
+    "kind": "bodyweight"
+  },
+  {
+    "name": "Clap Push Up",
+    "equipment": "bodyweight",
+    "primary": [
+      "chest"
+    ],
+    "secondary": [
+      "triceps",
+      "frontDelts"
+    ],
+    "kind": "bodyweight"
+  },
+  {
+    "name": "Close Grip Pull Up",
+    "equipment": "bodyweight",
+    "primary": [
+      "lats",
+      "biceps"
+    ],
+    "secondary": [
+      "upperBack"
+    ],
+    "kind": "bodyweight"
+  },
+  {
+    "name": "Cobra Triceps Extension",
+    "equipment": "bodyweight",
+    "primary": [
+      "triceps"
+    ],
+    "secondary": [],
+    "kind": "bodyweight"
+  },
+  {
+    "name": "Cross Trainer",
+    "equipment": "cardio",
+    "primary": [
+      "fullBody"
+    ],
+    "secondary": [
+      "quads",
+      "glutes",
+      "hamstrings"
+    ],
+    "kind": "cardio"
+  },
+  {
+    "name": "Crunches",
+    "equipment": "bodyweight",
+    "primary": [
+      "abs"
+    ],
+    "secondary": [],
+    "kind": "bodyweight"
+  },
+  {
+    "name": "Curtsy Lunge",
+    "equipment": "bodyweight",
+    "primary": [
+      "glutes",
+      "abductors",
+      "quads"
+    ],
+    "secondary": [
+      "adductors"
+    ],
+    "kind": "bodyweight"
+  },
+  {
+    "name": "Cycling",
+    "equipment": "cardio",
+    "primary": [
+      "quads"
+    ],
+    "secondary": [
+      "hamstrings",
+      "glutes",
+      "calves"
+    ],
+    "kind": "cardio"
+  },
+  {
+    "name": "Cycling - Stationary",
+    "equipment": "cardio",
+    "primary": [
+      "quads"
+    ],
+    "secondary": [
+      "hamstrings",
+      "glutes",
+      "calves"
+    ],
+    "kind": "cardio"
+  },
+  {
+    "name": "Dead Bug",
+    "equipment": "bodyweight",
+    "primary": [
+      "abs"
+    ],
+    "secondary": [
+      "hipFlexors"
+    ],
+    "kind": "bodyweight"
+  },
+  {
+    "name": "Dead Hang",
+    "equipment": "bodyweight",
+    "primary": [
+      "forearms",
+      "lats"
+    ],
+    "secondary": [
+      "biceps"
+    ],
+    "kind": "timed"
+  },
+  {
+    "name": "Deadlift",
+    "equipment": "barbell",
+    "primary": [
+      "hamstrings",
+      "glutes",
+      "lowerBack"
+    ],
+    "secondary": [
+      "quads",
+      "traps",
+      "lats",
+      "forearms"
+    ],
+    "kind": "weight"
+  },
+  {
+    "name": "Decline Push Up",
+    "equipment": "bodyweight",
+    "primary": [
+      "chest",
+      "frontDelts"
+    ],
+    "secondary": [
+      "triceps",
+      "abs"
+    ],
+    "kind": "bodyweight"
+  },
+  {
+    "name": "Decline Sit Up",
+    "equipment": "bodyweight",
+    "primary": [
+      "abs"
+    ],
+    "secondary": [
+      "hipFlexors"
+    ],
+    "kind": "bodyweight"
+  },
+  {
+    "name": "Diamond Push Up",
+    "equipment": "bodyweight",
+    "primary": [
+      "triceps"
+    ],
+    "secondary": [
+      "chest",
+      "frontDelts"
+    ],
+    "kind": "bodyweight"
+  },
+  {
+    "name": "Dip",
+    "equipment": "bodyweight",
+    "primary": [
+      "triceps",
+      "chest"
+    ],
+    "secondary": [
+      "frontDelts"
+    ],
+    "kind": "bodyweight"
+  },
+  {
+    "name": "Donkey Kick",
+    "equipment": "bodyweight",
+    "primary": [
+      "glutes"
+    ],
+    "secondary": [
+      "hamstrings"
+    ],
+    "kind": "bodyweight"
+  },
+  {
+    "name": "Dragon Flag",
+    "equipment": "bodyweight",
+    "primary": [
+      "abs"
+    ],
+    "secondary": [
+      "hipFlexors",
+      "lowerBack"
+    ],
+    "kind": "bodyweight"
+  },
+  {
+    "name": "Dumbbell Bench Press",
+    "equipment": "dumbbell",
+    "primary": [
+      "chest"
+    ],
+    "secondary": [
+      "triceps",
+      "frontDelts"
+    ],
+    "kind": "weight"
+  },
+  {
+    "name": "Dumbbell Bent Over Reverse Fly",
+    "equipment": "dumbbell",
+    "primary": [
+      "rearDelts"
+    ],
+    "secondary": [
+      "upperBack",
+      "traps"
+    ],
+    "kind": "weight"
+  },
+  {
+    "name": "Dumbbell Bent Over Row",
+    "equipment": "dumbbell",
+    "primary": [
+      "lats",
+      "upperBack"
+    ],
+    "secondary": [
+      "biceps",
+      "rearDelts",
+      "lowerBack"
+    ],
+    "kind": "weight"
+  },
+  {
+    "name": "Dumbbell Bicep Curl",
+    "equipment": "dumbbell",
+    "primary": [
+      "biceps"
+    ],
+    "secondary": [
+      "forearms"
+    ],
+    "kind": "weight"
+  },
+  {
+    "name": "Dumbbell Bulgarian Split Squat",
+    "equipment": "dumbbell",
+    "primary": [
+      "quads",
+      "glutes"
+    ],
+    "secondary": [
+      "hamstrings",
+      "adductors"
+    ],
+    "kind": "weight"
+  },
+  {
+    "name": "Dumbbell Calf Raise",
+    "equipment": "dumbbell",
+    "primary": [
+      "calves"
+    ],
+    "secondary": [],
+    "kind": "weight"
+  },
+  {
+    "name": "Dumbbell Chest Supported Row",
+    "equipment": "dumbbell",
+    "primary": [
+      "upperBack",
+      "lats"
+    ],
+    "secondary": [
+      "biceps",
+      "rearDelts"
+    ],
+    "kind": "weight"
+  },
+  {
+    "name": "Dumbbell Clean and Press",
+    "equipment": "dumbbell",
+    "primary": [
+      "fullBody"
+    ],
+    "secondary": [
+      "frontDelts",
+      "triceps"
+    ],
+    "kind": "weight"
+  },
+  {
+    "name": "Dumbbell Close Grip Press",
+    "equipment": "dumbbell",
+    "primary": [
+      "triceps",
+      "chest"
+    ],
+    "secondary": [
+      "frontDelts"
+    ],
+    "kind": "weight"
+  },
+  {
+    "name": "Dumbbell Concentration Curl",
+    "equipment": "dumbbell",
+    "primary": [
+      "biceps"
+    ],
+    "secondary": [
+      "forearms"
+    ],
+    "kind": "weight"
+  },
+  {
+    "name": "Dumbbell Cross Body Hammer Curl",
+    "equipment": "dumbbell",
+    "primary": [
+      "biceps"
+    ],
+    "secondary": [
+      "forearms"
+    ],
+    "kind": "weight"
+  },
+  {
+    "name": "Dumbbell Deadlift",
+    "equipment": "dumbbell",
+    "primary": [
+      "hamstrings",
+      "glutes",
+      "lowerBack"
+    ],
+    "secondary": [
+      "quads",
+      "traps",
+      "forearms"
+    ],
+    "kind": "weight"
+  },
+  {
+    "name": "Dumbbell Decline Bench Press",
+    "equipment": "dumbbell",
+    "primary": [
+      "chest"
+    ],
+    "secondary": [
+      "triceps",
+      "frontDelts"
+    ],
+    "kind": "weight"
+  },
+  {
+    "name": "Dumbbell Decline Fly",
+    "equipment": "dumbbell",
+    "primary": [
+      "chest"
+    ],
+    "secondary": [
+      "frontDelts"
+    ],
+    "kind": "weight"
+  },
+  {
+    "name": "Dumbbell Farmer's Walk",
+    "equipment": "dumbbell",
+    "primary": [
+      "forearms",
+      "traps"
+    ],
+    "secondary": [
+      "abs",
+      "glutes"
+    ],
+    "kind": "weight"
+  },
+  {
+    "name": "Dumbbell Floor Press",
+    "equipment": "dumbbell",
+    "primary": [
+      "chest",
+      "triceps"
+    ],
+    "secondary": [
+      "frontDelts"
+    ],
+    "kind": "weight"
+  },
+  {
+    "name": "Dumbbell Front Raise",
+    "equipment": "dumbbell",
+    "primary": [
+      "frontDelts"
+    ],
+    "secondary": [
+      "sideDelts",
+      "chest"
+    ],
+    "kind": "weight"
+  },
+  {
+    "name": "Dumbbell Front Squat",
+    "equipment": "dumbbell",
+    "primary": [
+      "quads"
+    ],
+    "secondary": [
+      "glutes",
+      "abs"
+    ],
+    "kind": "weight"
+  },
+  {
+    "name": "Dumbbell Glute Bridge",
+    "equipment": "dumbbell",
+    "primary": [
+      "glutes"
+    ],
+    "secondary": [
+      "hamstrings"
+    ],
+    "kind": "weight"
+  },
+  {
+    "name": "Dumbbell Goblet Squat",
+    "equipment": "dumbbell",
+    "primary": [
+      "quads",
+      "glutes"
+    ],
+    "secondary": [
+      "abs",
+      "adductors"
+    ],
+    "kind": "weight"
+  },
+  {
+    "name": "Dumbbell Hammer Strength Press",
+    "equipment": "dumbbell",
+    "primary": [
+      "chest",
+      "frontDelts"
+    ],
+    "secondary": [
+      "triceps"
+    ],
+    "kind": "weight"
+  },
+  {
+    "name": "Dumbbell Hang Power Clean",
+    "equipment": "dumbbell",
+    "primary": [
+      "glutes",
+      "hamstrings",
+      "traps"
+    ],
+    "secondary": [
+      "quads",
+      "forearms"
+    ],
+    "kind": "weight"
+  },
+  {
+    "name": "Dumbbell Hip Abduction",
+    "equipment": "dumbbell",
+    "primary": [
+      "abductors"
+    ],
+    "secondary": [
+      "glutes"
+    ],
+    "kind": "weight"
+  },
+  {
+    "name": "Dumbbell Hip Thrust",
+    "equipment": "dumbbell",
+    "primary": [
+      "glutes"
+    ],
+    "secondary": [
+      "hamstrings",
+      "quads"
+    ],
+    "kind": "weight"
+  },
+  {
+    "name": "Dumbbell Incline Bench Press",
+    "equipment": "dumbbell",
+    "primary": [
+      "chest",
+      "frontDelts"
+    ],
+    "secondary": [
+      "triceps"
+    ],
+    "kind": "weight"
+  },
+  {
+    "name": "Dumbbell Incline Curl",
+    "equipment": "dumbbell",
+    "primary": [
+      "biceps"
+    ],
+    "secondary": [
+      "forearms"
+    ],
+    "kind": "weight"
+  },
+  {
+    "name": "Dumbbell Incline Fly",
+    "equipment": "dumbbell",
+    "primary": [
+      "chest"
+    ],
+    "secondary": [
+      "frontDelts"
+    ],
+    "kind": "weight"
+  },
+  {
+    "name": "Dumbbell Incline Row",
+    "equipment": "dumbbell",
+    "primary": [
+      "upperBack",
+      "lats"
+    ],
+    "secondary": [
+      "biceps",
+      "rearDelts"
+    ],
+    "kind": "weight"
+  },
+  {
+    "name": "Dumbbell Lateral Lunge",
+    "equipment": "dumbbell",
+    "primary": [
+      "adductors",
+      "quads",
+      "glutes"
+    ],
+    "secondary": [
+      "hamstrings"
+    ],
+    "kind": "weight"
+  },
+  {
+    "name": "Dumbbell Lateral Raise",
+    "equipment": "dumbbell",
+    "primary": [
+      "sideDelts"
+    ],
+    "secondary": [
+      "traps",
+      "frontDelts"
+    ],
+    "kind": "weight"
+  },
+  {
+    "name": "Dumbbell Lunge",
+    "equipment": "dumbbell",
+    "primary": [
+      "quads",
+      "glutes"
+    ],
+    "secondary": [
+      "hamstrings",
+      "adductors"
+    ],
+    "kind": "weight"
+  },
+  {
+    "name": "Dumbbell Lying Rear Delt Raise",
+    "equipment": "dumbbell",
+    "primary": [
+      "rearDelts"
+    ],
+    "secondary": [
+      "upperBack"
+    ],
+    "kind": "weight"
+  },
+  {
+    "name": "Dumbbell Overhead Triceps Extension",
+    "equipment": "dumbbell",
+    "primary": [
+      "triceps"
+    ],
+    "secondary": [],
+    "kind": "weight"
+  },
+  {
+    "name": "Dumbbell Pendlay Row",
+    "equipment": "dumbbell",
+    "primary": [
+      "lats",
+      "upperBack"
+    ],
+    "secondary": [
+      "biceps",
+      "rearDelts"
+    ],
+    "kind": "weight"
+  },
+  {
+    "name": "Dumbbell Preacher Curl",
+    "equipment": "dumbbell",
+    "primary": [
+      "biceps"
+    ],
+    "secondary": [
+      "forearms"
+    ],
+    "kind": "weight"
+  },
+  {
+    "name": "Dumbbell Pullover",
+    "equipment": "dumbbell",
+    "primary": [
+      "lats",
+      "chest"
+    ],
+    "secondary": [
+      "triceps"
+    ],
+    "kind": "weight"
+  },
+  {
+    "name": "Dumbbell Pullover Crunch",
+    "equipment": "dumbbell",
+    "primary": [
+      "abs"
+    ],
+    "secondary": [
+      "lats"
+    ],
+    "kind": "weight"
+  },
+  {
+    "name": "Dumbbell Rear Delt Raise",
+    "equipment": "dumbbell",
+    "primary": [
+      "rearDelts"
+    ],
+    "secondary": [
+      "upperBack",
+      "traps"
+    ],
+    "kind": "weight"
+  },
+  {
+    "name": "Dumbbell Renegade Row",
+    "equipment": "dumbbell",
+    "primary": [
+      "lats",
+      "upperBack",
+      "abs"
+    ],
+    "secondary": [
+      "biceps",
+      "obliques",
+      "frontDelts"
+    ],
+    "kind": "weight"
+  },
+  {
+    "name": "Dumbbell Reverse Curl",
+    "equipment": "dumbbell",
+    "primary": [
+      "forearms",
+      "biceps"
+    ],
+    "secondary": [],
+    "kind": "weight"
+  },
+  {
+    "name": "Dumbbell Reverse Lunge",
+    "equipment": "dumbbell",
+    "primary": [
+      "quads",
+      "glutes"
+    ],
+    "secondary": [
+      "hamstrings",
+      "adductors"
+    ],
+    "kind": "weight"
+  },
+  {
+    "name": "Dumbbell Reverse Wrist Curl",
+    "equipment": "dumbbell",
+    "primary": [
+      "forearms"
+    ],
+    "secondary": [],
+    "kind": "weight"
+  },
+  {
+    "name": "Dumbbell Romanian Deadlift",
+    "equipment": "dumbbell",
+    "primary": [
+      "hamstrings",
+      "glutes"
+    ],
+    "secondary": [
+      "lowerBack"
+    ],
+    "kind": "weight"
+  },
+  {
+    "name": "Dumbbell Row",
+    "equipment": "dumbbell",
+    "primary": [
+      "lats",
+      "upperBack"
+    ],
+    "secondary": [
+      "biceps",
+      "rearDelts"
+    ],
+    "kind": "weight"
+  },
+  {
+    "name": "Dumbbell Russian Twist",
+    "equipment": "dumbbell",
+    "primary": [
+      "obliques",
+      "abs"
+    ],
+    "secondary": [
+      "hipFlexors"
+    ],
+    "kind": "weight"
+  },
+  {
+    "name": "Dumbbell Seated Lateral Raise",
+    "equipment": "dumbbell",
+    "primary": [
+      "sideDelts"
+    ],
+    "secondary": [
+      "traps"
+    ],
+    "kind": "weight"
+  },
+  {
+    "name": "Dumbbell Shoulder Press",
+    "equipment": "dumbbell",
+    "primary": [
+      "frontDelts",
+      "sideDelts"
+    ],
+    "secondary": [
+      "triceps"
+    ],
+    "kind": "weight"
+  },
+  {
+    "name": "Dumbbell Shrug",
+    "equipment": "dumbbell",
+    "primary": [
+      "traps"
+    ],
+    "secondary": [
+      "forearms",
+      "upperBack"
+    ],
+    "kind": "weight"
+  },
+  {
+    "name": "Dumbbell Side Bend",
+    "equipment": "dumbbell",
+    "primary": [
+      "obliques"
+    ],
+    "secondary": [
+      "abs"
+    ],
+    "kind": "weight"
+  },
+  {
+    "name": "Dumbbell Single Arm Lateral Raise",
+    "equipment": "dumbbell",
+    "primary": [
+      "sideDelts"
+    ],
+    "secondary": [
+      "traps"
+    ],
+    "kind": "weight"
+  },
+  {
+    "name": "Dumbbell Single Arm Overhead Triceps Extension",
+    "equipment": "dumbbell",
+    "primary": [
+      "triceps"
+    ],
+    "secondary": [],
+    "kind": "weight"
+  },
+  {
+    "name": "Dumbbell Single Arm Row",
+    "equipment": "dumbbell",
+    "primary": [
+      "lats",
+      "upperBack"
+    ],
+    "secondary": [
+      "biceps",
+      "rearDelts"
+    ],
+    "kind": "weight"
+  },
+  {
+    "name": "Dumbbell Single Arm Shoulder Press",
+    "equipment": "dumbbell",
+    "primary": [
+      "frontDelts",
+      "sideDelts"
+    ],
+    "secondary": [
+      "triceps",
+      "abs"
+    ],
+    "kind": "weight"
+  },
+  {
+    "name": "Dumbbell Single Leg Calf Raise",
+    "equipment": "dumbbell",
+    "primary": [
+      "calves"
+    ],
+    "secondary": [],
+    "kind": "weight"
+  },
+  {
+    "name": "Dumbbell Single Leg Romanian Deadlift",
+    "equipment": "dumbbell",
+    "primary": [
+      "hamstrings",
+      "glutes"
+    ],
+    "secondary": [
+      "lowerBack",
+      "abductors"
+    ],
+    "kind": "weight"
+  },
+  {
+    "name": "Dumbbell Skullcrusher",
+    "equipment": "dumbbell",
+    "primary": [
+      "triceps"
+    ],
+    "secondary": [],
+    "kind": "weight"
+  },
+  {
+    "name": "Dumbbell Snatch",
+    "equipment": "dumbbell",
+    "primary": [
+      "fullBody"
+    ],
+    "secondary": [
+      "glutes",
+      "traps"
+    ],
+    "kind": "weight"
+  },
+  {
+    "name": "Dumbbell Spider Curl",
+    "equipment": "dumbbell",
+    "primary": [
+      "biceps"
+    ],
+    "secondary": [
+      "forearms"
+    ],
+    "kind": "weight"
+  },
+  {
+    "name": "Dumbbell Split Squat",
+    "equipment": "dumbbell",
+    "primary": [
+      "quads",
+      "glutes"
+    ],
+    "secondary": [
+      "hamstrings",
+      "adductors"
+    ],
+    "kind": "weight"
+  },
+  {
+    "name": "Dumbbell Squat",
+    "equipment": "dumbbell",
+    "primary": [
+      "quads",
+      "glutes"
+    ],
+    "secondary": [
+      "hamstrings",
+      "adductors"
+    ],
+    "kind": "weight"
+  },
+  {
+    "name": "Dumbbell Squeeze Press",
+    "equipment": "dumbbell",
+    "primary": [
+      "chest"
+    ],
+    "secondary": [
+      "triceps"
+    ],
+    "kind": "weight"
+  },
+  {
+    "name": "Dumbbell Step Up",
+    "equipment": "dumbbell",
+    "primary": [
+      "quads",
+      "glutes"
+    ],
+    "secondary": [
+      "hamstrings",
+      "calves"
+    ],
+    "kind": "weight"
+  },
+  {
+    "name": "Dumbbell Stiff Legged Deadlift",
+    "equipment": "dumbbell",
+    "primary": [
+      "hamstrings",
+      "glutes"
+    ],
+    "secondary": [
+      "lowerBack"
+    ],
+    "kind": "weight"
+  },
+  {
+    "name": "Dumbbell Sumo Squat",
+    "equipment": "dumbbell",
+    "primary": [
+      "quads",
+      "adductors",
+      "glutes"
+    ],
+    "secondary": [
+      "hamstrings"
+    ],
+    "kind": "weight"
+  },
+  {
+    "name": "Dumbbell Thruster",
+    "equipment": "dumbbell",
+    "primary": [
+      "quads",
+      "glutes",
+      "frontDelts"
+    ],
+    "secondary": [
+      "triceps",
+      "sideDelts"
+    ],
+    "kind": "weight"
+  },
+  {
+    "name": "Dumbbell Tricep Extension",
+    "equipment": "dumbbell",
+    "primary": [
+      "triceps"
+    ],
+    "secondary": [],
+    "kind": "weight"
+  },
+  {
+    "name": "Dumbbell Triceps Kickback",
+    "equipment": "dumbbell",
+    "primary": [
+      "triceps"
+    ],
+    "secondary": [],
+    "kind": "weight"
+  },
+  {
+    "name": "Dumbbell Upright Row",
+    "equipment": "dumbbell",
+    "primary": [
+      "sideDelts",
+      "traps"
+    ],
+    "secondary": [
+      "biceps",
+      "forearms"
+    ],
+    "kind": "weight"
+  },
+  {
+    "name": "Dumbbell Walking Lunge",
+    "equipment": "dumbbell",
+    "primary": [
+      "quads",
+      "glutes"
+    ],
+    "secondary": [
+      "hamstrings",
+      "adductors"
+    ],
+    "kind": "weight"
+  },
+  {
+    "name": "Dumbbell Y Raise",
+    "equipment": "dumbbell",
+    "primary": [
+      "rearDelts",
+      "sideDelts"
+    ],
+    "secondary": [
+      "traps",
+      "upperBack"
+    ],
+    "kind": "weight"
+  },
+  {
+    "name": "Dumbbell Zottman Curl",
+    "equipment": "dumbbell",
+    "primary": [
+      "biceps",
+      "forearms"
+    ],
+    "secondary": [],
+    "kind": "weight"
+  },
+  {
+    "name": "EZ-Bar Curl",
+    "equipment": "barbell",
+    "primary": [
+      "biceps"
+    ],
+    "secondary": [
+      "forearms"
+    ],
+    "kind": "weight"
+  },
+  {
+    "name": "Elevated Hip Bridge",
+    "equipment": "bodyweight",
+    "primary": [
+      "glutes"
+    ],
+    "secondary": [
+      "hamstrings"
+    ],
+    "kind": "bodyweight"
+  },
+  {
+    "name": "Elliptical",
+    "equipment": "cardio",
+    "primary": [
+      "fullBody"
+    ],
+    "secondary": [
+      "quads",
+      "glutes",
+      "hamstrings"
+    ],
+    "kind": "cardio"
+  },
+  {
+    "name": "Farmer's Walk",
+    "equipment": "other",
+    "primary": [
+      "forearms",
+      "traps"
+    ],
+    "secondary": [
+      "abs",
+      "glutes"
+    ],
+    "kind": "weight"
+  },
+  {
+    "name": "Fire Hydrant",
+    "equipment": "bodyweight",
+    "primary": [
+      "abductors",
+      "glutes"
+    ],
+    "secondary": [],
+    "kind": "bodyweight"
+  },
+  {
+    "name": "Flutter Kick",
+    "equipment": "bodyweight",
+    "primary": [
+      "abs",
+      "hipFlexors"
+    ],
+    "secondary": [],
+    "kind": "bodyweight"
+  },
+  {
+    "name": "Glute Kickback",
+    "equipment": "bodyweight",
+    "primary": [
+      "glutes"
+    ],
+    "secondary": [
+      "hamstrings"
+    ],
+    "kind": "bodyweight"
+  },
+  {
+    "name": "Good Morning",
+    "equipment": "barbell",
+    "primary": [
+      "hamstrings",
+      "lowerBack"
+    ],
+    "secondary": [
+      "glutes"
+    ],
+    "kind": "weight"
+  },
+  {
+    "name": "Hack Squat",
+    "equipment": "machine",
+    "primary": [
+      "quads"
+    ],
+    "secondary": [
+      "glutes",
+      "adductors"
+    ],
+    "kind": "weight"
+  },
+  {
+    "name": "Hammer Curls",
+    "equipment": "dumbbell",
+    "primary": [
+      "biceps"
+    ],
+    "secondary": [
+      "forearms"
+    ],
+    "kind": "weight"
+  },
+  {
+    "name": "Hammerstrength Chest Press",
+    "equipment": "machine",
+    "primary": [
+      "chest"
+    ],
+    "secondary": [
+      "triceps",
+      "frontDelts"
+    ],
+    "kind": "weight"
+  },
+  {
+    "name": "Hammerstrength Decline Chest Press",
+    "equipment": "machine",
+    "primary": [
+      "chest"
+    ],
+    "secondary": [
+      "triceps",
+      "frontDelts"
+    ],
+    "kind": "weight"
+  },
+  {
+    "name": "Hammerstrength Incline Chest Press",
+    "equipment": "machine",
+    "primary": [
+      "chest",
+      "frontDelts"
+    ],
+    "secondary": [
+      "triceps"
+    ],
+    "kind": "weight"
+  },
+  {
+    "name": "Hammerstrength Iso Row",
+    "equipment": "machine",
+    "primary": [
+      "lats",
+      "upperBack"
+    ],
+    "secondary": [
+      "biceps",
+      "rearDelts"
+    ],
+    "kind": "weight"
+  },
+  {
+    "name": "Hammerstrength Shrug",
+    "equipment": "machine",
+    "primary": [
+      "traps"
+    ],
+    "secondary": [
+      "forearms",
+      "upperBack"
+    ],
+    "kind": "weight"
+  },
+  {
+    "name": "Hand Release Push Up",
+    "equipment": "bodyweight",
+    "primary": [
+      "chest"
+    ],
+    "secondary": [
+      "triceps",
+      "frontDelts",
+      "abs"
+    ],
+    "kind": "bodyweight"
+  },
+  {
+    "name": "Handstand Push Up",
+    "equipment": "bodyweight",
+    "primary": [
+      "frontDelts",
+      "sideDelts"
+    ],
+    "secondary": [
+      "triceps",
+      "traps"
+    ],
+    "kind": "bodyweight"
+  },
+  {
+    "name": "Hanging Knee Raise",
+    "equipment": "bodyweight",
+    "primary": [
+      "abs",
+      "hipFlexors"
+    ],
+    "secondary": [
+      "forearms",
+      "obliques"
+    ],
+    "kind": "bodyweight"
+  },
+  {
+    "name": "Hanging Leg Raise",
+    "equipment": "bodyweight",
+    "primary": [
+      "abs",
+      "hipFlexors"
+    ],
+    "secondary": [
+      "forearms",
+      "obliques"
+    ],
+    "kind": "bodyweight"
+  },
+  {
+    "name": "Hanging Windshield Wiper",
+    "equipment": "bodyweight",
+    "primary": [
+      "obliques",
+      "abs"
+    ],
+    "secondary": [
+      "hipFlexors",
+      "forearms"
+    ],
+    "kind": "bodyweight"
+  },
+  {
+    "name": "Heel Touch",
+    "equipment": "bodyweight",
+    "primary": [
+      "obliques"
+    ],
+    "secondary": [
+      "abs"
+    ],
+    "kind": "bodyweight"
+  },
+  {
+    "name": "High Cable Crossover Fly",
+    "equipment": "cable",
+    "primary": [
+      "chest"
+    ],
+    "secondary": [
+      "frontDelts"
+    ],
+    "kind": "weight"
+  },
+  {
+    "name": "High Knees",
+    "equipment": "bodyweight",
+    "primary": [
+      "hipFlexors",
+      "quads"
+    ],
+    "secondary": [
+      "calves",
+      "abs"
+    ],
+    "kind": "bodyweight"
+  },
+  {
+    "name": "Hiking",
+    "equipment": "cardio",
+    "primary": [
+      "quads",
+      "glutes"
+    ],
+    "secondary": [
+      "hamstrings",
+      "calves"
+    ],
+    "kind": "cardio"
+  },
+  {
+    "name": "Hip Thrust",
+    "equipment": "bodyweight",
+    "primary": [
+      "glutes"
+    ],
+    "secondary": [
+      "hamstrings"
+    ],
+    "kind": "bodyweight"
+  },
+  {
+    "name": "Hollow Body Hold",
+    "equipment": "bodyweight",
+    "primary": [
+      "abs"
+    ],
+    "secondary": [
+      "hipFlexors"
+    ],
+    "kind": "timed"
+  },
+  {
+    "name": "Hyperextension",
+    "equipment": "bodyweight",
+    "primary": [
+      "lowerBack",
+      "glutes"
+    ],
+    "secondary": [
+      "hamstrings"
+    ],
+    "kind": "bodyweight"
+  },
+  {
+    "name": "Inchworm",
+    "equipment": "bodyweight",
+    "primary": [
+      "fullBody"
+    ],
+    "secondary": [
+      "abs",
+      "frontDelts",
+      "hamstrings"
+    ],
+    "kind": "bodyweight"
+  },
+  {
+    "name": "Incline Push Up",
+    "equipment": "bodyweight",
+    "primary": [
+      "chest"
+    ],
+    "secondary": [
+      "triceps",
+      "frontDelts"
+    ],
+    "kind": "bodyweight"
+  },
+  {
+    "name": "Inverted Row",
+    "equipment": "bodyweight",
+    "primary": [
+      "upperBack",
+      "lats"
+    ],
+    "secondary": [
+      "biceps",
+      "rearDelts"
+    ],
+    "kind": "bodyweight"
+  },
+  {
+    "name": "Isometric Biceps Hold",
+    "equipment": "bodyweight",
+    "primary": [
+      "biceps"
+    ],
+    "secondary": [
+      "forearms"
+    ],
+    "kind": "timed"
+  },
+  {
+    "name": "Jogging",
+    "equipment": "cardio",
+    "primary": [
+      "quads",
+      "hamstrings"
+    ],
+    "secondary": [
+      "glutes",
+      "calves"
+    ],
+    "kind": "cardio"
+  },
+  {
+    "name": "Jump Rope",
+    "equipment": "cardio",
+    "primary": [
+      "calves"
+    ],
+    "secondary": [
+      "quads",
+      "forearms"
+    ],
+    "kind": "cardio"
+  },
+  {
+    "name": "Jump Squat",
+    "equipment": "bodyweight",
+    "primary": [
+      "quads",
+      "glutes"
+    ],
+    "secondary": [
+      "calves"
+    ],
+    "kind": "bodyweight"
+  },
+  {
+    "name": "Jumping Jacks",
+    "equipment": "bodyweight",
+    "primary": [
+      "fullBody"
+    ],
+    "secondary": [
+      "calves",
+      "sideDelts"
+    ],
+    "kind": "bodyweight"
+  },
+  {
+    "name": "Kelso Shrug",
+    "equipment": "barbell",
+    "primary": [
+      "upperBack",
+      "traps"
+    ],
+    "secondary": [
+      "rearDelts"
+    ],
+    "kind": "weight"
+  },
+  {
+    "name": "Kettlebell Clean",
+    "equipment": "kettlebell",
+    "primary": [
+      "glutes",
+      "hamstrings"
+    ],
+    "secondary": [
+      "traps",
+      "frontDelts"
+    ],
+    "kind": "weight"
+  },
+  {
+    "name": "Kettlebell Deadlift",
+    "equipment": "kettlebell",
+    "primary": [
+      "hamstrings",
+      "glutes"
+    ],
+    "secondary": [
+      "lowerBack"
+    ],
+    "kind": "weight"
+  },
+  {
+    "name": "Kettlebell Farmer's Walk",
+    "equipment": "kettlebell",
+    "primary": [
+      "forearms",
+      "traps"
+    ],
+    "secondary": [
+      "abs"
+    ],
+    "kind": "weight"
+  },
+  {
+    "name": "Kettlebell Front Squat",
+    "equipment": "kettlebell",
+    "primary": [
+      "quads"
+    ],
+    "secondary": [
+      "glutes",
+      "abs"
+    ],
+    "kind": "weight"
+  },
+  {
+    "name": "Kettlebell Goblet Squat",
+    "equipment": "kettlebell",
+    "primary": [
+      "quads",
+      "glutes"
+    ],
+    "secondary": [
+      "abs"
+    ],
+    "kind": "weight"
+  },
+  {
+    "name": "Kettlebell Halo",
+    "equipment": "kettlebell",
+    "primary": [
+      "frontDelts",
+      "sideDelts"
+    ],
+    "secondary": [
+      "triceps",
+      "abs"
+    ],
+    "kind": "weight"
+  },
+  {
+    "name": "Kettlebell Press",
+    "equipment": "kettlebell",
+    "primary": [
+      "frontDelts"
+    ],
+    "secondary": [
+      "triceps",
+      "sideDelts"
+    ],
+    "kind": "weight"
+  },
+  {
+    "name": "Kettlebell Row",
+    "equipment": "kettlebell",
+    "primary": [
+      "lats",
+      "upperBack"
+    ],
+    "secondary": [
+      "biceps"
+    ],
+    "kind": "weight"
+  },
+  {
+    "name": "Kettlebell Snatch",
+    "equipment": "kettlebell",
+    "primary": [
+      "glutes",
+      "hamstrings",
+      "frontDelts"
+    ],
+    "secondary": [
+      "traps",
+      "lats"
+    ],
+    "kind": "weight"
+  },
+  {
+    "name": "Kettlebell Sumo Deadlift High Pull",
+    "equipment": "kettlebell",
+    "primary": [
+      "glutes",
+      "adductors",
+      "traps"
+    ],
+    "secondary": [
+      "sideDelts",
+      "hamstrings"
+    ],
+    "kind": "weight"
+  },
+  {
+    "name": "Kettlebell Swing",
+    "equipment": "kettlebell",
+    "primary": [
+      "glutes",
+      "hamstrings"
+    ],
+    "secondary": [
+      "lowerBack",
+      "frontDelts",
+      "abs"
+    ],
+    "kind": "weight"
+  },
+  {
+    "name": "Kettlebell Turkish Get Up",
+    "equipment": "kettlebell",
+    "primary": [
+      "fullBody"
+    ],
+    "secondary": [
+      "frontDelts",
+      "abs",
+      "glutes"
+    ],
+    "kind": "weight"
+  },
+  {
+    "name": "Kettlebell Windmill",
+    "equipment": "kettlebell",
+    "primary": [
+      "obliques"
+    ],
+    "secondary": [
+      "glutes",
+      "hamstrings",
+      "frontDelts"
+    ],
+    "kind": "weight"
+  },
+  {
+    "name": "L Sit Hold",
+    "equipment": "bodyweight",
+    "primary": [
+      "abs",
+      "hipFlexors"
+    ],
+    "secondary": [
+      "triceps"
+    ],
+    "kind": "timed"
+  },
+  {
+    "name": "Landmine Row",
+    "equipment": "barbell",
+    "primary": [
+      "lats",
+      "upperBack"
+    ],
+    "secondary": [
+      "biceps",
+      "rearDelts"
+    ],
+    "kind": "weight"
+  },
+  {
+    "name": "Lat Pulldown",
+    "equipment": "cable",
+    "primary": [
+      "lats"
+    ],
+    "secondary": [
+      "biceps",
+      "upperBack",
+      "rearDelts"
+    ],
+    "kind": "weight"
+  },
+  {
+    "name": "Lateral Lunge",
+    "equipment": "bodyweight",
+    "primary": [
+      "adductors",
+      "quads",
+      "glutes"
+    ],
+    "secondary": [
+      "hamstrings"
+    ],
+    "kind": "bodyweight"
+  },
+  {
+    "name": "Leg Extension",
+    "equipment": "machine",
+    "primary": [
+      "quads"
+    ],
+    "secondary": [],
+    "kind": "weight"
+  },
+  {
+    "name": "Leg Press",
+    "equipment": "machine",
+    "primary": [
+      "quads",
+      "glutes"
+    ],
+    "secondary": [
+      "hamstrings",
+      "adductors"
+    ],
+    "kind": "weight"
+  },
+  {
+    "name": "Leg Pull-In",
+    "equipment": "bodyweight",
+    "primary": [
+      "abs",
+      "hipFlexors"
+    ],
+    "secondary": [],
+    "kind": "bodyweight"
+  },
+  {
+    "name": "Leg Raise",
+    "equipment": "bodyweight",
+    "primary": [
+      "abs",
+      "hipFlexors"
+    ],
+    "secondary": [],
+    "kind": "bodyweight"
+  },
+  {
+    "name": "Low Cable Chest Fly",
+    "equipment": "cable",
+    "primary": [
+      "chest"
+    ],
+    "secondary": [
+      "frontDelts"
+    ],
+    "kind": "weight"
+  },
+  {
+    "name": "Low Cable Chest Press",
+    "equipment": "cable",
+    "primary": [
+      "chest"
+    ],
+    "secondary": [
+      "frontDelts",
+      "triceps"
+    ],
+    "kind": "weight"
+  },
+  {
+    "name": "Lunge",
+    "equipment": "bodyweight",
+    "primary": [
+      "quads",
+      "glutes"
+    ],
+    "secondary": [
+      "hamstrings",
+      "adductors"
+    ],
+    "kind": "bodyweight"
+  },
+  {
+    "name": "Lunge Jump",
+    "equipment": "bodyweight",
+    "primary": [
+      "quads",
+      "glutes"
+    ],
+    "secondary": [
+      "hamstrings",
+      "calves"
+    ],
+    "kind": "bodyweight"
+  },
+  {
+    "name": "Lying Hamstrings Curl",
+    "equipment": "machine",
+    "primary": [
+      "hamstrings"
+    ],
+    "secondary": [
+      "calves"
+    ],
+    "kind": "weight"
+  },
+  {
+    "name": "Machine Ab Crunch",
+    "equipment": "machine",
+    "primary": [
+      "abs"
+    ],
+    "secondary": [],
+    "kind": "weight"
+  },
+  {
+    "name": "Machine Back Extension",
+    "equipment": "machine",
+    "primary": [
+      "lowerBack"
+    ],
+    "secondary": [
+      "glutes",
+      "hamstrings"
+    ],
+    "kind": "weight"
+  },
+  {
+    "name": "Machine Bicep Curl",
+    "equipment": "machine",
+    "primary": [
+      "biceps"
+    ],
+    "secondary": [
+      "forearms"
+    ],
+    "kind": "weight"
+  },
+  {
+    "name": "Machine Chest Press",
+    "equipment": "machine",
+    "primary": [
+      "chest"
+    ],
+    "secondary": [
+      "triceps",
+      "frontDelts"
+    ],
+    "kind": "weight"
+  },
+  {
+    "name": "Machine Decline Chest Press",
+    "equipment": "machine",
+    "primary": [
+      "chest"
+    ],
+    "secondary": [
+      "triceps",
+      "frontDelts"
+    ],
+    "kind": "weight"
+  },
+  {
+    "name": "Machine Donkey Calf Raise",
+    "equipment": "machine",
+    "primary": [
+      "calves"
+    ],
+    "secondary": [],
+    "kind": "weight"
+  },
+  {
+    "name": "Machine Fly",
+    "equipment": "machine",
+    "primary": [
+      "chest"
+    ],
+    "secondary": [
+      "frontDelts"
+    ],
+    "kind": "weight"
+  },
+  {
+    "name": "Machine Glute Kickback",
+    "equipment": "machine",
+    "primary": [
+      "glutes"
+    ],
+    "secondary": [
+      "hamstrings"
+    ],
+    "kind": "weight"
+  },
+  {
+    "name": "Machine Hack Squat",
+    "equipment": "machine",
+    "primary": [
+      "quads"
+    ],
+    "secondary": [
+      "glutes",
+      "adductors"
+    ],
+    "kind": "weight"
+  },
+  {
+    "name": "Machine High Row",
+    "equipment": "machine",
+    "primary": [
+      "lats",
+      "upperBack"
+    ],
+    "secondary": [
+      "biceps",
+      "rearDelts"
+    ],
+    "kind": "weight"
+  },
+  {
+    "name": "Machine Hip Abductor",
+    "equipment": "machine",
+    "primary": [
+      "abductors"
+    ],
+    "secondary": [
+      "glutes"
+    ],
+    "kind": "weight"
+  },
+  {
+    "name": "Machine Hip Adductor",
+    "equipment": "machine",
+    "primary": [
+      "adductors"
+    ],
+    "secondary": [],
+    "kind": "weight"
+  },
+  {
+    "name": "Machine Hip Thrust",
+    "equipment": "machine",
+    "primary": [
+      "glutes"
+    ],
+    "secondary": [
+      "hamstrings",
+      "quads"
+    ],
+    "kind": "weight"
+  },
+  {
+    "name": "Machine Incline Chest Press",
+    "equipment": "machine",
+    "primary": [
+      "chest",
+      "frontDelts"
+    ],
+    "secondary": [
+      "triceps"
+    ],
+    "kind": "weight"
+  },
+  {
+    "name": "Machine Lateral Raise",
+    "equipment": "machine",
+    "primary": [
+      "sideDelts"
+    ],
+    "secondary": [
+      "traps"
+    ],
+    "kind": "weight"
+  },
+  {
+    "name": "Machine Leg Press",
+    "equipment": "machine",
+    "primary": [
+      "quads",
+      "glutes"
+    ],
+    "secondary": [
+      "hamstrings",
+      "adductors"
+    ],
+    "kind": "weight"
+  },
+  {
+    "name": "Machine Low Row",
+    "equipment": "machine",
+    "primary": [
+      "lats",
+      "upperBack"
+    ],
+    "secondary": [
+      "biceps",
+      "rearDelts"
+    ],
+    "kind": "weight"
+  },
+  {
+    "name": "Machine Pendulum Squat",
+    "equipment": "machine",
+    "primary": [
+      "quads"
+    ],
+    "secondary": [
+      "glutes"
+    ],
+    "kind": "weight"
+  },
+  {
+    "name": "Machine Preacher Curl",
+    "equipment": "machine",
+    "primary": [
+      "biceps"
+    ],
+    "secondary": [
+      "forearms"
+    ],
+    "kind": "weight"
+  },
+  {
+    "name": "Machine Pullover",
+    "equipment": "machine",
+    "primary": [
+      "lats"
+    ],
+    "secondary": [
+      "chest",
+      "triceps"
+    ],
+    "kind": "weight"
+  },
+  {
+    "name": "Machine Rear Delt Fly",
+    "equipment": "machine",
+    "primary": [
+      "rearDelts"
+    ],
+    "secondary": [
+      "upperBack"
+    ],
+    "kind": "weight"
+  },
+  {
+    "name": "Machine Row",
+    "equipment": "machine",
+    "primary": [
+      "lats",
+      "upperBack"
+    ],
+    "secondary": [
+      "biceps",
+      "rearDelts"
+    ],
+    "kind": "weight"
+  },
+  {
+    "name": "Machine Seated Row",
+    "equipment": "machine",
+    "primary": [
+      "lats",
+      "upperBack"
+    ],
+    "secondary": [
+      "biceps",
+      "rearDelts"
+    ],
+    "kind": "weight"
+  },
+  {
+    "name": "Machine Shoulder Press",
+    "equipment": "machine",
+    "primary": [
+      "frontDelts",
+      "sideDelts"
+    ],
+    "secondary": [
+      "triceps"
+    ],
+    "kind": "weight"
+  },
+  {
+    "name": "Machine Shrug",
+    "equipment": "machine",
+    "primary": [
+      "traps"
+    ],
+    "secondary": [
+      "forearms"
+    ],
+    "kind": "weight"
+  },
+  {
+    "name": "Machine Squat",
+    "equipment": "machine",
+    "primary": [
+      "quads",
+      "glutes"
+    ],
+    "secondary": [
+      "hamstrings"
+    ],
+    "kind": "weight"
+  },
+  {
+    "name": "Machine Standing Calf Raise",
+    "equipment": "machine",
+    "primary": [
+      "calves"
+    ],
+    "secondary": [],
+    "kind": "weight"
+  },
+  {
+    "name": "Machine Standing Leg Curl",
+    "equipment": "machine",
+    "primary": [
+      "hamstrings"
+    ],
+    "secondary": [
+      "calves"
+    ],
+    "kind": "weight"
+  },
+  {
+    "name": "Machine Torso Rotation",
+    "equipment": "machine",
+    "primary": [
+      "obliques"
+    ],
+    "secondary": [
+      "abs"
+    ],
+    "kind": "weight"
+  },
+  {
+    "name": "Machine Tricep Dip",
+    "equipment": "machine",
+    "primary": [
+      "triceps"
+    ],
+    "secondary": [
+      "chest",
+      "frontDelts"
+    ],
+    "kind": "weight"
+  },
+  {
+    "name": "Machine Tricep Extension",
+    "equipment": "machine",
+    "primary": [
+      "triceps"
+    ],
+    "secondary": [],
+    "kind": "weight"
+  },
+  {
+    "name": "Machine Wrist Curl",
+    "equipment": "machine",
+    "primary": [
+      "forearms"
+    ],
+    "secondary": [],
+    "kind": "weight"
+  },
+  {
+    "name": "Medicine Ball Slam",
+    "equipment": "other",
+    "primary": [
+      "fullBody"
+    ],
+    "secondary": [
+      "abs",
+      "lats"
+    ],
+    "kind": "weight"
+  },
+  {
+    "name": "Medicine Ball Throw",
+    "equipment": "other",
+    "primary": [
+      "fullBody"
+    ],
+    "secondary": [
+      "frontDelts",
+      "chest"
+    ],
+    "kind": "weight"
+  },
+  {
+    "name": "Mid Cable Crossover Fly",
+    "equipment": "cable",
+    "primary": [
+      "chest"
+    ],
+    "secondary": [
+      "frontDelts"
+    ],
+    "kind": "weight"
+  },
+  {
+    "name": "Mountain Climber",
+    "equipment": "bodyweight",
+    "primary": [
+      "abs",
+      "hipFlexors"
+    ],
+    "secondary": [
+      "frontDelts",
+      "quads"
+    ],
+    "kind": "bodyweight"
+  },
+  {
+    "name": "Muscle Up",
+    "equipment": "bodyweight",
+    "primary": [
+      "lats",
+      "triceps"
+    ],
+    "secondary": [
+      "chest",
+      "biceps",
+      "frontDelts"
+    ],
+    "kind": "bodyweight"
+  },
+  {
+    "name": "Neutral Grip Pull Up",
+    "equipment": "bodyweight",
+    "primary": [
+      "lats",
+      "biceps"
+    ],
+    "secondary": [
+      "upperBack",
+      "forearms"
+    ],
+    "kind": "bodyweight"
+  },
+  {
+    "name": "Nordic Hamstring Curl",
+    "equipment": "bodyweight",
+    "primary": [
+      "hamstrings"
+    ],
+    "secondary": [
+      "glutes",
+      "calves"
+    ],
+    "kind": "bodyweight"
+  },
+  {
+    "name": "Oblique Crunch",
+    "equipment": "bodyweight",
+    "primary": [
+      "obliques"
+    ],
+    "secondary": [
+      "abs"
+    ],
+    "kind": "bodyweight"
+  },
+  {
+    "name": "Palms-Down Dumbbell Wrist Curl",
+    "equipment": "dumbbell",
+    "primary": [
+      "forearms"
+    ],
+    "secondary": [],
+    "kind": "weight"
+  },
+  {
+    "name": "Palms-Up Barbell Wrist Curl",
+    "equipment": "barbell",
+    "primary": [
+      "forearms"
+    ],
+    "secondary": [],
+    "kind": "weight"
+  },
+  {
+    "name": "Palms-Up Dumbbell Wrist Curl",
+    "equipment": "dumbbell",
+    "primary": [
+      "forearms"
+    ],
+    "secondary": [],
+    "kind": "weight"
+  },
+  {
+    "name": "Parallel Bar Dip",
+    "equipment": "bodyweight",
+    "primary": [
+      "triceps",
+      "chest"
+    ],
+    "secondary": [
+      "frontDelts"
+    ],
+    "kind": "bodyweight"
+  },
+  {
+    "name": "Pike Push Up",
+    "equipment": "bodyweight",
+    "primary": [
+      "frontDelts"
+    ],
+    "secondary": [
+      "triceps",
+      "sideDelts"
+    ],
+    "kind": "bodyweight"
+  },
+  {
+    "name": "Pistol Squat",
+    "equipment": "bodyweight",
+    "primary": [
+      "quads",
+      "glutes"
+    ],
+    "secondary": [
+      "hamstrings",
+      "adductors"
+    ],
+    "kind": "bodyweight"
+  },
+  {
+    "name": "Plank",
+    "equipment": "bodyweight",
+    "primary": [
+      "abs"
+    ],
+    "secondary": [
+      "obliques",
+      "lowerBack",
+      "frontDelts"
+    ],
+    "kind": "timed"
+  },
+  {
+    "name": "Preacher Curl",
+    "equipment": "barbell",
+    "primary": [
+      "biceps"
+    ],
+    "secondary": [
+      "forearms"
+    ],
+    "kind": "weight"
+  },
+  {
+    "name": "Prone W's",
+    "equipment": "bodyweight",
+    "primary": [
+      "rearDelts",
+      "upperBack"
+    ],
+    "secondary": [
+      "traps"
+    ],
+    "kind": "bodyweight"
+  },
+  {
+    "name": "Pull Up",
+    "equipment": "bodyweight",
+    "primary": [
+      "lats"
+    ],
+    "secondary": [
+      "biceps",
+      "upperBack",
+      "forearms"
+    ],
+    "kind": "bodyweight"
+  },
+  {
+    "name": "Push Up",
+    "equipment": "bodyweight",
+    "primary": [
+      "chest"
+    ],
+    "secondary": [
+      "triceps",
+      "frontDelts",
+      "abs"
+    ],
+    "kind": "bodyweight"
+  },
+  {
+    "name": "Push Up Bar",
+    "equipment": "bodyweight",
+    "primary": [
+      "chest"
+    ],
+    "secondary": [
+      "triceps",
+      "frontDelts",
+      "abs"
+    ],
+    "kind": "bodyweight"
+  },
+  {
+    "name": "Push Up on Knees",
+    "equipment": "bodyweight",
+    "primary": [
+      "chest"
+    ],
+    "secondary": [
+      "triceps",
+      "frontDelts"
+    ],
+    "kind": "bodyweight"
+  },
+  {
+    "name": "Recumbent Bike",
+    "equipment": "cardio",
+    "primary": [
+      "quads"
+    ],
+    "secondary": [
+      "hamstrings",
+      "glutes"
+    ],
+    "kind": "cardio"
+  },
+  {
+    "name": "Reverse Barbell Curl",
+    "equipment": "barbell",
+    "primary": [
+      "forearms",
+      "biceps"
+    ],
+    "secondary": [],
+    "kind": "weight"
+  },
+  {
+    "name": "Reverse Crunch",
+    "equipment": "bodyweight",
+    "primary": [
+      "abs"
+    ],
+    "secondary": [
+      "hipFlexors"
+    ],
+    "kind": "bodyweight"
+  },
+  {
+    "name": "Reverse Grip Barbell Bent Over Row",
+    "equipment": "barbell",
+    "primary": [
+      "lats",
+      "upperBack"
+    ],
+    "secondary": [
+      "biceps",
+      "rearDelts",
+      "lowerBack"
+    ],
+    "kind": "weight"
+  },
+  {
+    "name": "Reverse Grip Pull Down",
+    "equipment": "cable",
+    "primary": [
+      "lats",
+      "biceps"
+    ],
+    "secondary": [
+      "upperBack"
+    ],
+    "kind": "weight"
+  },
+  {
+    "name": "Reverse Hyperextension",
+    "equipment": "bodyweight",
+    "primary": [
+      "glutes",
+      "hamstrings",
+      "lowerBack"
+    ],
+    "secondary": [],
+    "kind": "bodyweight"
+  },
+  {
+    "name": "Reverse Plank",
+    "equipment": "bodyweight",
+    "primary": [
+      "glutes",
+      "lowerBack"
+    ],
+    "secondary": [
+      "hamstrings",
+      "rearDelts"
+    ],
+    "kind": "timed"
+  },
+  {
+    "name": "Romanian Deadlift",
+    "equipment": "barbell",
+    "primary": [
+      "hamstrings",
+      "glutes"
+    ],
+    "secondary": [
+      "lowerBack",
+      "forearms"
+    ],
+    "kind": "weight"
+  },
+  {
+    "name": "Rowing",
+    "equipment": "cardio",
+    "primary": [
+      "fullBody"
+    ],
+    "secondary": [
+      "lats",
+      "quads",
+      "biceps"
+    ],
+    "kind": "cardio"
+  },
+  {
+    "name": "Rowing Machine",
+    "equipment": "cardio",
+    "primary": [
+      "fullBody"
+    ],
+    "secondary": [
+      "lats",
+      "quads",
+      "biceps"
+    ],
+    "kind": "cardio"
+  },
+  {
+    "name": "Running",
+    "equipment": "cardio",
+    "primary": [
+      "quads",
+      "hamstrings"
+    ],
+    "secondary": [
+      "glutes",
+      "calves"
+    ],
+    "kind": "cardio"
+  },
+  {
+    "name": "Russian Twist",
+    "equipment": "bodyweight",
+    "primary": [
+      "obliques",
+      "abs"
+    ],
+    "secondary": [
+      "hipFlexors"
+    ],
+    "kind": "bodyweight"
+  },
+  {
+    "name": "Scissor Kick",
+    "equipment": "bodyweight",
+    "primary": [
+      "abs",
+      "hipFlexors"
+    ],
+    "secondary": [
+      "obliques"
+    ],
+    "kind": "bodyweight"
+  },
+  {
+    "name": "Seated Barbell Shoulder Press",
+    "equipment": "barbell",
+    "primary": [
+      "frontDelts",
+      "sideDelts"
+    ],
+    "secondary": [
+      "triceps"
+    ],
+    "kind": "weight"
+  },
+  {
+    "name": "Seated Box Jumps",
+    "equipment": "bodyweight",
+    "primary": [
+      "quads",
+      "glutes"
+    ],
+    "secondary": [
+      "calves"
+    ],
+    "kind": "bodyweight"
+  },
+  {
+    "name": "Seated Dumbbell Calf Raise",
+    "equipment": "dumbbell",
+    "primary": [
+      "calves"
+    ],
+    "secondary": [],
+    "kind": "weight"
+  },
+  {
+    "name": "Seated Dumbbell Curl",
+    "equipment": "dumbbell",
+    "primary": [
+      "biceps"
+    ],
+    "secondary": [
+      "forearms"
+    ],
+    "kind": "weight"
+  },
+  {
+    "name": "Seated Leg Curl",
+    "equipment": "machine",
+    "primary": [
+      "hamstrings"
+    ],
+    "secondary": [
+      "calves"
+    ],
+    "kind": "weight"
+  },
+  {
+    "name": "Seated Machine Calf Press",
+    "equipment": "machine",
+    "primary": [
+      "calves"
+    ],
+    "secondary": [],
+    "kind": "weight"
+  },
+  {
+    "name": "Shadow Boxing",
+    "equipment": "cardio",
+    "primary": [
+      "fullBody"
+    ],
+    "secondary": [
+      "sideDelts",
+      "frontDelts"
+    ],
+    "kind": "cardio"
+  },
+  {
+    "name": "Shotgun Row",
+    "equipment": "cable",
+    "primary": [
+      "lats",
+      "upperBack"
+    ],
+    "secondary": [
+      "biceps",
+      "rearDelts"
+    ],
+    "kind": "weight"
+  },
+  {
+    "name": "Side Lying Leg Raise",
+    "equipment": "bodyweight",
+    "primary": [
+      "abductors"
+    ],
+    "secondary": [
+      "glutes"
+    ],
+    "kind": "bodyweight"
+  },
+  {
+    "name": "Side Plank",
+    "equipment": "bodyweight",
+    "primary": [
+      "obliques"
+    ],
+    "secondary": [
+      "abductors",
+      "abs"
+    ],
+    "kind": "timed"
+  },
+  {
+    "name": "Single Arm Lat Pulldown",
+    "equipment": "cable",
+    "primary": [
+      "lats"
+    ],
+    "secondary": [
+      "biceps",
+      "upperBack"
+    ],
+    "kind": "weight"
+  },
+  {
+    "name": "Single Leg Glute Bridge",
+    "equipment": "bodyweight",
+    "primary": [
+      "glutes"
+    ],
+    "secondary": [
+      "hamstrings"
+    ],
+    "kind": "bodyweight"
+  },
+  {
+    "name": "Single Leg Leg Extension",
+    "equipment": "machine",
+    "primary": [
+      "quads"
+    ],
+    "secondary": [],
+    "kind": "weight"
+  },
+  {
+    "name": "Sit Up",
+    "equipment": "bodyweight",
+    "primary": [
+      "abs"
+    ],
+    "secondary": [
+      "hipFlexors"
+    ],
+    "kind": "bodyweight"
+  },
+  {
+    "name": "Skater Jump",
+    "equipment": "bodyweight",
+    "primary": [
+      "glutes",
+      "abductors"
+    ],
+    "secondary": [
+      "quads",
+      "calves"
+    ],
+    "kind": "bodyweight"
+  },
+  {
+    "name": "Ski Erg",
+    "equipment": "cardio",
+    "primary": [
+      "fullBody"
+    ],
+    "secondary": [
+      "lats",
+      "triceps",
+      "abs"
+    ],
+    "kind": "cardio"
+  },
+  {
+    "name": "Skullcrusher",
+    "equipment": "barbell",
+    "primary": [
+      "triceps"
+    ],
+    "secondary": [],
+    "kind": "weight"
+  },
+  {
+    "name": "Sled Pull",
+    "equipment": "other",
+    "primary": [
+      "hamstrings",
+      "glutes"
+    ],
+    "secondary": [
+      "quads",
+      "lowerBack"
+    ],
+    "kind": "weight"
+  },
+  {
+    "name": "Sled Push",
+    "equipment": "other",
+    "primary": [
+      "quads",
+      "glutes"
+    ],
+    "secondary": [
+      "calves",
+      "hamstrings"
+    ],
+    "kind": "weight"
+  },
+  {
+    "name": "Smith Machine Bench Press",
+    "equipment": "smithMachine",
+    "primary": [
+      "chest"
+    ],
+    "secondary": [
+      "triceps",
+      "frontDelts"
+    ],
+    "kind": "weight"
+  },
+  {
+    "name": "Smith Machine Bent Over Row",
+    "equipment": "smithMachine",
+    "primary": [
+      "lats",
+      "upperBack"
+    ],
+    "secondary": [
+      "biceps",
+      "rearDelts",
+      "lowerBack"
+    ],
+    "kind": "weight"
+  },
+  {
+    "name": "Smith Machine Bulgarian Split Squat",
+    "equipment": "smithMachine",
+    "primary": [
+      "quads",
+      "glutes"
+    ],
+    "secondary": [
+      "hamstrings",
+      "adductors"
+    ],
+    "kind": "weight"
+  },
+  {
+    "name": "Smith Machine Calf Raise",
+    "equipment": "smithMachine",
+    "primary": [
+      "calves"
+    ],
+    "secondary": [],
+    "kind": "weight"
+  },
+  {
+    "name": "Smith Machine Close Grip Bench Press",
+    "equipment": "smithMachine",
+    "primary": [
+      "triceps",
+      "chest"
+    ],
+    "secondary": [
+      "frontDelts"
+    ],
+    "kind": "weight"
+  },
+  {
+    "name": "Smith Machine Decline Bench Press",
+    "equipment": "smithMachine",
+    "primary": [
+      "chest"
+    ],
+    "secondary": [
+      "triceps",
+      "frontDelts"
+    ],
+    "kind": "weight"
+  },
+  {
+    "name": "Smith Machine Front Squat",
+    "equipment": "smithMachine",
+    "primary": [
+      "quads"
+    ],
+    "secondary": [
+      "glutes"
+    ],
+    "kind": "weight"
+  },
+  {
+    "name": "Smith Machine Good Morning",
+    "equipment": "smithMachine",
+    "primary": [
+      "hamstrings",
+      "lowerBack"
+    ],
+    "secondary": [
+      "glutes"
+    ],
+    "kind": "weight"
+  },
+  {
+    "name": "Smith Machine Hip Thrust",
+    "equipment": "smithMachine",
+    "primary": [
+      "glutes"
+    ],
+    "secondary": [
+      "hamstrings"
+    ],
+    "kind": "weight"
+  },
+  {
+    "name": "Smith Machine Incline Bench Press",
+    "equipment": "smithMachine",
+    "primary": [
+      "chest",
+      "frontDelts"
+    ],
+    "secondary": [
+      "triceps"
+    ],
+    "kind": "weight"
+  },
+  {
+    "name": "Smith Machine Lunge",
+    "equipment": "smithMachine",
+    "primary": [
+      "quads",
+      "glutes"
+    ],
+    "secondary": [
+      "hamstrings"
+    ],
+    "kind": "weight"
+  },
+  {
+    "name": "Smith Machine Reverse Lunge",
+    "equipment": "smithMachine",
+    "primary": [
+      "quads",
+      "glutes"
+    ],
+    "secondary": [
+      "hamstrings"
+    ],
+    "kind": "weight"
+  },
+  {
+    "name": "Smith Machine Romanian Deadlift",
+    "equipment": "smithMachine",
+    "primary": [
+      "hamstrings",
+      "glutes"
+    ],
+    "secondary": [
+      "lowerBack"
+    ],
+    "kind": "weight"
+  },
+  {
+    "name": "Smith Machine Seated Calf Raise",
+    "equipment": "smithMachine",
+    "primary": [
+      "calves"
+    ],
+    "secondary": [],
+    "kind": "weight"
+  },
+  {
+    "name": "Smith Machine Shoulder Press",
+    "equipment": "smithMachine",
+    "primary": [
+      "frontDelts",
+      "sideDelts"
+    ],
+    "secondary": [
+      "triceps"
+    ],
+    "kind": "weight"
+  },
+  {
+    "name": "Smith Machine Shrug",
+    "equipment": "smithMachine",
+    "primary": [
+      "traps"
+    ],
+    "secondary": [
+      "forearms"
+    ],
+    "kind": "weight"
+  },
+  {
+    "name": "Smith Machine Single-Leg Split Squat",
+    "equipment": "smithMachine",
+    "primary": [
+      "quads",
+      "glutes"
+    ],
+    "secondary": [
+      "hamstrings",
+      "adductors"
+    ],
+    "kind": "weight"
+  },
+  {
+    "name": "Smith Machine Squat",
+    "equipment": "smithMachine",
+    "primary": [
+      "quads",
+      "glutes"
+    ],
+    "secondary": [
+      "hamstrings",
+      "adductors"
+    ],
+    "kind": "weight"
+  },
+  {
+    "name": "Smith Machine Upright Row",
+    "equipment": "smithMachine",
+    "primary": [
+      "sideDelts",
+      "traps"
+    ],
+    "secondary": [
+      "biceps"
+    ],
+    "kind": "weight"
+  },
+  {
+    "name": "Spin Bike",
+    "equipment": "cardio",
+    "primary": [
+      "quads"
+    ],
+    "secondary": [
+      "hamstrings",
+      "glutes",
+      "calves"
+    ],
+    "kind": "cardio"
+  },
+  {
+    "name": "Sprints",
+    "equipment": "cardio",
+    "primary": [
+      "quads",
+      "hamstrings"
+    ],
+    "secondary": [
+      "glutes",
+      "calves"
+    ],
+    "kind": "cardio"
+  },
+  {
+    "name": "Stair Climber",
+    "equipment": "cardio",
+    "primary": [
+      "glutes",
+      "quads"
+    ],
+    "secondary": [
+      "calves",
+      "hamstrings"
+    ],
+    "kind": "cardio"
+  },
+  {
+    "name": "Stair Climbing",
+    "equipment": "cardio",
+    "primary": [
+      "glutes",
+      "quads"
+    ],
+    "secondary": [
+      "calves"
+    ],
+    "kind": "cardio"
+  },
+  {
+    "name": "Stair Stepper",
+    "equipment": "cardio",
+    "primary": [
+      "glutes",
+      "quads"
+    ],
+    "secondary": [
+      "calves",
+      "hamstrings"
+    ],
+    "kind": "cardio"
+  },
+  {
+    "name": "Standing Barbell Calf Raise",
+    "equipment": "barbell",
+    "primary": [
+      "calves"
+    ],
+    "secondary": [],
+    "kind": "weight"
+  },
+  {
+    "name": "Standing Dumbbell Calf Raise",
+    "equipment": "dumbbell",
+    "primary": [
+      "calves"
+    ],
+    "secondary": [],
+    "kind": "weight"
+  },
+  {
+    "name": "Standing Dumbbell Shoulder Press",
+    "equipment": "dumbbell",
+    "primary": [
+      "frontDelts",
+      "sideDelts"
+    ],
+    "secondary": [
+      "triceps",
+      "abs"
+    ],
+    "kind": "weight"
+  },
+  {
+    "name": "Stationary Bike",
+    "equipment": "cardio",
+    "primary": [
+      "quads"
+    ],
+    "secondary": [
+      "hamstrings",
+      "glutes",
+      "calves"
+    ],
+    "kind": "cardio"
+  },
+  {
+    "name": "Step Up",
+    "equipment": "dumbbell",
+    "primary": [
+      "quads",
+      "glutes"
+    ],
+    "secondary": [
+      "hamstrings",
+      "calves"
+    ],
+    "kind": "weight"
+  },
+  {
+    "name": "Stiff-Legged Barbell Good Morning",
+    "equipment": "barbell",
+    "primary": [
+      "hamstrings",
+      "lowerBack"
+    ],
+    "secondary": [
+      "glutes"
+    ],
+    "kind": "weight"
+  },
+  {
+    "name": "Superman",
+    "equipment": "bodyweight",
+    "primary": [
+      "lowerBack",
+      "glutes"
+    ],
+    "secondary": [
+      "hamstrings",
+      "rearDelts"
+    ],
+    "kind": "bodyweight"
+  },
+  {
+    "name": "Superman Hold",
+    "equipment": "bodyweight",
+    "primary": [
+      "lowerBack",
+      "glutes"
+    ],
+    "secondary": [
+      "hamstrings",
+      "rearDelts"
+    ],
+    "kind": "timed"
+  },
+  {
+    "name": "Swimming",
+    "equipment": "cardio",
+    "primary": [
+      "fullBody"
+    ],
+    "secondary": [
+      "lats",
+      "sideDelts"
+    ],
+    "kind": "cardio"
+  },
+  {
+    "name": "T-Bar Row",
+    "equipment": "other",
+    "primary": [
+      "lats",
+      "upperBack"
+    ],
+    "secondary": [
+      "biceps",
+      "rearDelts",
+      "lowerBack"
+    ],
+    "kind": "weight"
+  },
+  {
+    "name": "Toe Touch",
+    "equipment": "bodyweight",
+    "primary": [
+      "abs"
+    ],
+    "secondary": [],
+    "kind": "bodyweight"
+  },
+  {
+    "name": "Toes To Bar",
+    "equipment": "bodyweight",
+    "primary": [
+      "abs",
+      "hipFlexors"
+    ],
+    "secondary": [
+      "lats",
+      "forearms"
+    ],
+    "kind": "bodyweight"
+  },
+  {
+    "name": "Trap Bar Deadlift",
+    "equipment": "other",
+    "primary": [
+      "quads",
+      "glutes",
+      "hamstrings"
+    ],
+    "secondary": [
+      "lowerBack",
+      "traps",
+      "forearms"
+    ],
+    "kind": "weight"
+  },
+  {
+    "name": "Treadmill",
+    "equipment": "cardio",
+    "primary": [
+      "quads",
+      "hamstrings"
+    ],
+    "secondary": [
+      "glutes",
+      "calves"
+    ],
+    "kind": "cardio"
+  },
+  {
+    "name": "Treadmill Incline Walk",
+    "equipment": "cardio",
+    "primary": [
+      "glutes",
+      "hamstrings"
+    ],
+    "secondary": [
+      "quads",
+      "calves"
+    ],
+    "kind": "cardio"
+  },
+  {
+    "name": "Tricep Push Up",
+    "equipment": "bodyweight",
+    "primary": [
+      "triceps"
+    ],
+    "secondary": [
+      "chest",
+      "frontDelts"
+    ],
+    "kind": "bodyweight"
+  },
+  {
+    "name": "Tuck Jump",
+    "equipment": "bodyweight",
+    "primary": [
+      "quads",
+      "glutes"
+    ],
+    "secondary": [
+      "calves",
+      "abs"
+    ],
+    "kind": "bodyweight"
+  },
+  {
+    "name": "Upright Row",
+    "equipment": "barbell",
+    "primary": [
+      "sideDelts",
+      "traps"
+    ],
+    "secondary": [
+      "biceps",
+      "forearms"
+    ],
+    "kind": "weight"
+  },
+  {
+    "name": "V Up",
+    "equipment": "bodyweight",
+    "primary": [
+      "abs"
+    ],
+    "secondary": [
+      "hipFlexors"
+    ],
+    "kind": "bodyweight"
+  },
+  {
+    "name": "Vertical Knee Raise",
+    "equipment": "bodyweight",
+    "primary": [
+      "abs",
+      "hipFlexors"
+    ],
+    "secondary": [
+      "obliques",
+      "forearms"
+    ],
+    "kind": "bodyweight"
+  },
+  {
+    "name": "Waiter Curls",
+    "equipment": "dumbbell",
+    "primary": [
+      "biceps"
+    ],
+    "secondary": [
+      "forearms"
+    ],
+    "kind": "weight"
+  },
+  {
+    "name": "Walking",
+    "equipment": "cardio",
+    "primary": [
+      "quads"
+    ],
+    "secondary": [
+      "hamstrings",
+      "glutes",
+      "calves"
+    ],
+    "kind": "cardio"
+  },
+  {
+    "name": "Walking Lunge",
+    "equipment": "bodyweight",
+    "primary": [
+      "quads",
+      "glutes"
+    ],
+    "secondary": [
+      "hamstrings",
+      "adductors"
+    ],
+    "kind": "bodyweight"
+  },
+  {
+    "name": "Wall Ball",
+    "equipment": "other",
+    "primary": [
+      "quads",
+      "glutes",
+      "frontDelts"
+    ],
+    "secondary": [
+      "sideDelts",
+      "triceps"
+    ],
+    "kind": "weight"
+  },
+  {
+    "name": "Wall Sit",
+    "equipment": "bodyweight",
+    "primary": [
+      "quads"
+    ],
+    "secondary": [
+      "glutes"
+    ],
+    "kind": "timed"
+  },
+  {
+    "name": "Weighted Chin Up",
+    "equipment": "bodyweight",
+    "primary": [
+      "lats",
+      "biceps"
+    ],
+    "secondary": [
+      "upperBack",
+      "forearms"
+    ],
+    "kind": "weight"
+  },
+  {
+    "name": "Weighted Dip",
+    "equipment": "bodyweight",
+    "primary": [
+      "triceps",
+      "chest"
+    ],
+    "secondary": [
+      "frontDelts"
+    ],
+    "kind": "weight"
+  },
+  {
+    "name": "Weighted Pull Up",
+    "equipment": "bodyweight",
+    "primary": [
+      "lats"
+    ],
+    "secondary": [
+      "biceps",
+      "upperBack",
+      "forearms"
+    ],
+    "kind": "weight"
+  },
+  {
+    "name": "Wide Grip Pull Up",
+    "equipment": "bodyweight",
+    "primary": [
+      "lats"
+    ],
+    "secondary": [
+      "biceps",
+      "upperBack",
+      "forearms"
+    ],
+    "kind": "bodyweight"
+  },
+  {
+    "name": "Wide Grip Push Up",
+    "equipment": "bodyweight",
+    "primary": [
+      "chest"
+    ],
+    "secondary": [
+      "triceps",
+      "frontDelts"
+    ],
+    "kind": "bodyweight"
+  }
+]

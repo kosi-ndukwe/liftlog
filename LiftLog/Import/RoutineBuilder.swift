@@ -108,8 +108,17 @@ enum RoutineBuilder {
 
     /// For example "Barbell Bench Press, Cable Row + 3 more". You can rename routines later.
     static func name(for exercises: [Exercise]) -> String {
-        let names = exercises.prefix(2).map(\.name).joined(separator: ", ")
-        let remaining = exercises.count - 2
-        return remaining > 0 ? "\(names) + \(remaining) more" : names
+        name(for: exercises.map(\.name))
+    }
+
+    /// True for names this builder made, as opposed to ones you typed.
+    static func isGeneratedName(_ name: String) -> Bool {
+        name.contains(" + ") && name.hasSuffix(" more")
+    }
+
+    static func name(for names: [String]) -> String {
+        let shown = names.prefix(2).joined(separator: ", ")
+        let remaining = names.count - 2
+        return remaining > 0 ? "\(shown) + \(remaining) more" : shown
     }
 }

@@ -7,8 +7,15 @@ struct ContentView: View {
             Tab("Today", systemImage: "figure.strengthtraining.traditional") {
                 TodayView()
             }
-            Tab("History", systemImage: "clock.arrow.circlepath") {
+            Tab("Log", systemImage: "calendar") {
                 HistoryView()
+            }
+            Tab("Exercises", systemImage: "chart.xyaxis.line") {
+                NavigationStack {
+                    ExerciseListView()
+                        .navigationDestination(for: Exercise.self) { ExerciseDetailView(exercise: $0) }
+                        .navigationDestination(for: WorkoutSession.self) { WorkoutDetailView(session: $0) }
+                }
             }
             Tab("Settings", systemImage: "gearshape") {
                 SettingsView()
@@ -20,4 +27,5 @@ struct ContentView: View {
 #Preview {
     ContentView()
         .modelContainer(PreviewData.container)
+        .preferredColorScheme(.dark)
 }
