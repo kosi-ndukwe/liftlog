@@ -97,7 +97,7 @@ struct MusclesView: View {
     private func reload() {
         let cutoff = Calendar.current.date(byAdding: .day, value: -period.days, to: .now) ?? .now
         let sessions = (try? modelContext.fetch(FetchDescriptor<WorkoutSession>(
-            predicate: #Predicate { $0.start >= cutoff }
+            predicate: #Predicate { $0.start >= cutoff && $0.end != nil }
         ))) ?? []
         workoutCount = sessions.count
         load = MuscleLoad(sessions: sessions)

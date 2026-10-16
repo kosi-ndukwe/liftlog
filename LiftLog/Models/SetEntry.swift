@@ -13,6 +13,9 @@ final class SetEntry {
     var distanceMeters: Double
     var isWarmup: Bool
     var note: String
+    /// False while a set is planned but not yet done in a workout in progress.
+    /// Imported and finished sets are always completed.
+    var isCompleted: Bool = true
     /// Fitbod's multiplier column, kept as stored. 2.0 seems to mean the
     /// weight is per side or per dumbbell.
     var multiplier: Double

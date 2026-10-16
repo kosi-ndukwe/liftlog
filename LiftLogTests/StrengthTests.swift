@@ -60,8 +60,9 @@ struct ExerciseHistoryTests {
     @Test func usesBestWorkingSetPerWorkout() throws {
         let bench = Exercise(name: "Bench")
         context.insert(bench)
-        let day1 = WorkoutSession(start: Date(timeIntervalSince1970: 1_790_000_000))
-        let day2 = WorkoutSession(start: Date(timeIntervalSince1970: 1_790_604_800))
+        // Finished workouts have an end; one still in progress (no end) is left out of the history.
+        let day1 = WorkoutSession(start: Date(timeIntervalSince1970: 1_790_000_000), end: Date(timeIntervalSince1970: 1_790_003_600))
+        let day2 = WorkoutSession(start: Date(timeIntervalSince1970: 1_790_604_800), end: Date(timeIntervalSince1970: 1_790_608_400))
         context.insert(day1)
         context.insert(day2)
         for (session, sets) in [(day1, [(135.0, 10, true), (185, 8, false), (205, 3, false)]), (day2, [(190.0, 8, false)])] {
@@ -84,7 +85,7 @@ struct ExerciseHistoryTests {
     @Test func cardioChartsTime() throws {
         let cycling = Exercise(name: "Cycling")
         context.insert(cycling)
-        let ride = WorkoutSession(start: .now)
+        let ride = WorkoutSession(start: .now, end: .now)
         context.insert(ride)
         ride.sets.append(SetEntry(order: 0, exercise: cycling, durationSeconds: 1_800, distanceMeters: 8_046.72))
         try context.save()

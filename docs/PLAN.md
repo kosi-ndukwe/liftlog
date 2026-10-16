@@ -11,7 +11,7 @@ Dark, card-based screens modelled on Fitbod's feel: see [design.md](design.md). 
 
 ## Screens
 1. **Today**: saved routines (tap one to start) and today's step count.
-2. **Workout**: exercises pre-filled with last session's weights and reps; tap to mark a set done; optional rest timer.
+2. **Workout**: start from a routine on Today (or empty). Exercises come pre-filled with last time's sets; tap an exercise to edit reps and weight and tick each set done; add sets or exercises; an optional rest timer counts down after each set. Finish drops any sets you didn't do. A workout in progress survives closing the app and can be resumed from Today.
 3. **Log**: past workouts on a timeline, newest first, with sets, volume and the exercises done. Tap a workout for its sets; tap an exercise for its chart.
 4. **Exercises**: every exercise, built-in and imported, with the muscles it works. Tap one for Results (every workout's sets) and Trends (estimated one-rep max, weight, volume and reps over time, a personal record line, and a trend extended 3 months ahead).
    - **Muscles** (from Log): front and back body diagram shaded by how much each muscle was trained this week, month or 6 months, with sets per muscle. The same diagram heads each workout and exercise.
@@ -36,7 +36,7 @@ The built-in exercise list is `LiftLog/Resources/ExerciseCatalogue.json` (about 
 3. ✅ History, per-exercise charts, estimated 1RM and strength trend
 4. ✅ UI redesign: Fitbod-style dark look, shared design pieces, exercise catalogue with muscle groups, app icon
 5. ✅ Muscle map: the app's own front/back body diagram, shaded by sets per muscle over a week, month or 6 months
-6. Workout logging screen
+6. ✅ Workout logging: start a routine (or an empty workout), sets pre-filled from last time, tick sets done, add sets and exercises, rest timer, finish or discard
 7. Today screen and routines (add new routines, rename, edit, reorder)
 8. HealthKit: steps, then heart rate, then saving workouts
 9. Install on iPhone
