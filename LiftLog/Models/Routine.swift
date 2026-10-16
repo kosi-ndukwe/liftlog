@@ -6,6 +6,8 @@ import SwiftData
 final class Routine {
     var name: String
     var createdAt: Date
+    /// Position on the Today screen. Lower comes first.
+    var sortOrder: Int = 0
 
     @Relationship(deleteRule: .cascade, inverse: \RoutineExercise.routine)
     var entries: [RoutineExercise] = []
@@ -45,6 +47,29 @@ final class Routine {
     func append(_ exercise: Exercise) {
         let nextOrder = (entries.map(\.order).max() ?? -1) + 1
         entries.append(RoutineExercise(order: nextOrder, exercise: exercise))
+    }
+
+    /// Takes an exercise out of the routine.
+    func remove(_ exercise: Exercise, in context: ModelContext) {
+        for entry in entries where entry.exercise == exercise {
+            context.delete(entry)
+        }
+        entries.removeAll { $0.exercise == exercise }
+        renumber()
+    }
+
+    /// Moves exercises the way a list's drag handle does.
+    func move(from source: IndexSet, to destination: Int) {
+        var ordered = entries.sorted { $0.order < $1.order }
+        ordered.move(fromOffsets: source, toOffset: destination)
+        for (index, entry) in ordered.enumerated() { entry.order = index }
+    }
+
+    /// Makes the orders 0, 1, 2… again after a removal.
+    private func renumber() {
+        for (index, entry) in entries.sorted(by: { $0.order < $1.order }).enumerated() {
+            entry.order = index
+        }
     }
 }
 

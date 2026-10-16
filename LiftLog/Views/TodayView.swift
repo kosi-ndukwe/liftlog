@@ -3,11 +3,12 @@ import SwiftUI
 
 /// Saved routines. Starting a workout and the step count come in later milestones.
 struct TodayView: View {
-    @Query(sort: \Routine.createdAt) private var routines: [Routine]
+    @Query(sort: [SortDescriptor(\Routine.sortOrder), SortDescriptor(\Routine.createdAt)]) private var routines: [Routine]
     @Query(filter: #Predicate<WorkoutSession> { $0.end == nil }, sort: \WorkoutSession.start, order: .reverse)
     private var inProgress: [WorkoutSession]
     @Environment(\.modelContext) private var modelContext
     @State private var active: WorkoutSession?
+    @State private var isMakingRoutine = false
 
     var body: some View {
         NavigationStack {
@@ -52,18 +53,35 @@ struct TodayView: View {
                     } else {
                         Text("Routines")
                             .statLabelStyle()
-                        ForEach(routines) { routine in
+                        ForEach(Array(routines.enumerated()), id: \.element.persistentModelID) { index, routine in
                             NavigationLink(value: routine) {
                                 RoutineCard(routine: routine)
                             }
                             .buttonStyle(.plain)
+                            .contextMenu {
+                                if index > 0 {
+                                    Button { move(routine, by: -1) } label: { Label("Move Up", systemImage: "arrow.up") }
+                                }
+                                if index < routines.count - 1 {
+                                    Button { move(routine, by: 1) } label: { Label("Move Down", systemImage: "arrow.down") }
+                                }
+                            }
                         }
+                    }
+
+                    Button {
+                        isMakingRoutine = true
+                    } label: {
+                        Label("New Routine", systemImage: "plus")
+                            .font(.rowTitle)
+                            .foregroundStyle(Palette.accent)
+                            .padding(.vertical, 8)
                     }
 
                     Button {
                         start(routine: nil)
                     } label: {
-                        Label("Start an empty workout", systemImage: "plus")
+                        Label("Start an empty workout", systemImage: "figure.strengthtraining.traditional")
                             .font(.rowTitle)
                             .foregroundStyle(Palette.accent)
                             .padding(.vertical, 8)
@@ -74,6 +92,10 @@ struct TodayView: View {
             }
             .screenBackground()
             .toolbar(.hidden, for: .navigationBar)
+            .sheet(isPresented: $isMakingRoutine) {
+                RoutineEditorView(routine: nil)
+                    .presentationBackground(Palette.background)
+            }
             .fullScreenCover(item: $active) { session in
                 ActiveWorkoutView(session: session)
                     .preferredColorScheme(.dark)
@@ -82,6 +104,17 @@ struct TodayView: View {
             .navigationDestination(for: Exercise.self) { ExerciseDetailView(exercise: $0) }
             .navigationDestination(for: WorkoutSession.self) { WorkoutDetailView(session: $0) }
         }
+    }
+
+    /// Swaps the routine with its neighbour on the Today screen.
+    private func move(_ routine: Routine, by offset: Int) {
+        guard let index = routines.firstIndex(where: { $0 == routine }),
+              routines.indices.contains(index + offset) else { return }
+        // Give every routine an explicit position first, then swap two.
+        for (position, each) in routines.enumerated() { each.sortOrder = position }
+        routines[index].sortOrder = index + offset
+        routines[index + offset].sortOrder = index
+        try? modelContext.save()
     }
 
     private func start(routine: Routine?) {
@@ -152,6 +185,10 @@ struct MuscleGroupBadge: View {
 struct RoutineDetailView: View {
     let routine: Routine
     var onStart: (Routine?) -> Void = { _ in }
+    @Environment(\.modelContext) private var modelContext
+    @Environment(\.dismiss) private var dismiss
+    @State private var isEditing = false
+    @State private var isConfirmingDelete = false
 
     var body: some View {
         ScrollView {
@@ -179,6 +216,30 @@ struct RoutineDetailView: View {
         }
         .screenBackground()
         .navigationBarTitleDisplayMode(.inline)
+        .toolbar {
+            ToolbarItem(placement: .topBarTrailing) {
+                Menu {
+                    Button { isEditing = true } label: { Label("Edit Routine", systemImage: "pencil") }
+                    Button(role: .destructive) { isConfirmingDelete = true } label: { Label("Delete Routine", systemImage: "trash") }
+                } label: {
+                    Image(systemName: "ellipsis")
+                        .font(.system(size: 17, weight: .semibold))
+                }
+            }
+        }
+        .sheet(isPresented: $isEditing) {
+            RoutineEditorView(routine: routine)
+                .presentationBackground(Palette.background)
+        }
+        .confirmationDialog("Delete \(routine.name)?", isPresented: $isConfirmingDelete, titleVisibility: .visible) {
+            Button("Delete Routine", role: .destructive) {
+                modelContext.delete(routine)
+                try? modelContext.save()
+                dismiss()
+            }
+        } message: {
+            Text("Past workouts stay in your Log; they just lose the routine's name.")
+        }
         .safeAreaInset(edge: .bottom) {
             Button("Start Workout") { onStart(routine) }
                 .buttonStyle(PillButtonStyle())
