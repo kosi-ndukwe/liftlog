@@ -98,7 +98,7 @@ struct ExerciseHistoryTests {
     @Test func formatsSets() {
         let set = SetEntry(order: 0, exercise: nil, reps: 8)
         set.weightLb = 135
-        #expect(set.summary == "8 × 135 lb")
+        #expect(set.summary == "8 reps x 135 lb")
         #expect(SetEntry(order: 0, exercise: nil, reps: 15).summary == "15 reps")
     }
 }

@@ -10,8 +10,14 @@ enum PreviewData {
             let context = container.mainContext
 
             let bench = Exercise(name: "Barbell Bench Press")
+            bench.primaryMuscles = ["chest"]
+            bench.equipment = "barbell"
             let press = Exercise(name: "Barbell Shoulder Press")
+            press.primaryMuscles = ["frontDelts"]
+            press.equipment = "barbell"
             let pushdown = Exercise(name: "Cable Tricep Pushdown")
+            pushdown.primaryMuscles = ["triceps"]
+            pushdown.equipment = "cable"
 
             let push = Routine(name: "Push Day")
             context.insert(push)
@@ -35,6 +41,7 @@ enum PreviewData {
                         order += 1
                     }
                 }
+                session.refreshSummary()
             }
 
             return container

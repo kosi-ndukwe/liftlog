@@ -77,9 +77,11 @@ actor FitbodImporter {
                     multiplier: row.multiplier
                 ))
             }
+            session.refreshSummary()
             summary.sessionsAdded += 1
         }
 
+        for exercise in exercisesByName.values { exercise.refreshStats() }
         summary.routinesAdded = try RoutineBuilder.buildRoutines(in: modelContext, options: routineOptions)
         try modelContext.save()
         return summary

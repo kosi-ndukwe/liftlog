@@ -6,12 +6,16 @@
 - Strength estimates and trends describe past training only; they never suggest what to lift.
 - Weights are shown in **lb**. Fitbod stores kg, so values are converted on import.
 
+## Look
+Dark, card-based screens modelled on Fitbod's feel: see [design.md](design.md). Shared pieces live in `LiftLog/Design`.
+
 ## Screens
 1. **Today**: saved routines (tap one to start) and today's step count.
 2. **Workout**: exercises pre-filled with last session's weights and reps; tap to mark a set done; optional rest timer.
-3. **History**: past sessions, newest first. Tap a workout for its sets; tap an exercise for a chart of estimated one-rep max over time, a trend extended 3 months ahead, and every past workout with its sets and reps.
+3. **Log**: past workouts on a timeline, newest first, with sets, volume and the exercises done. Tap a workout for its sets; tap an exercise for its chart.
+4. **Exercises**: every exercise, built-in and imported, with the muscles it works. Tap one for Results (every workout's sets) and Trends (estimated one-rep max, weight, volume and reps over time, a personal record line, and a trend extended 3 months ahead).
    - **Muscle map**: front and back body diagram shaded by how much each muscle was trained in a workout, week or month.
-4. **Settings**: import a Fitbod CSV; manage routines and exercises.
+5. **Settings**: import a Fitbod CSV; manage routines and exercises.
 
 ## Apple Health
 - **Steps:** read and shown on Today.
@@ -19,17 +23,20 @@
 - **Saving workouts:** optionally write each session to Health as a traditional strength training workout.
 
 ## Data model (SwiftData)
-- `Exercise`: name
+- `Exercise`: name, primary/secondary muscles, equipment, kind (weight, bodyweight, assisted, timed, cardio), cached set count
 - `Routine`: name, ordered exercises
-- `WorkoutSession`: start, end, routine, average/peak heart rate
-- `SetEntry`: session, exercise, order, reps, weight (kg), duration, distance, isWarmup, note
+- `WorkoutSession`: start, end, routine, average/peak heart rate, cached set count / volume / exercise names
+- `SetEntry`: session, exercise, order, reps, weight (kg), duration, distance, isWarmup, note, multiplier
+
+The built-in exercise list is `LiftLog/Resources/ExerciseCatalogue.json` (about 440 exercises with muscles). It's added to the database on launch, and imported exercises get their muscles from it.
 
 ## Milestones
 1. ✅ Xcode project skeleton and data model
 2. ✅ Fitbod CSV import, with routines built from the most common workouts
-3. History, per-exercise charts, estimated 1RM and strength trend
-4. Muscle map: primary/secondary muscles for each exercise (drafted using references such as MuscleWiki, then reviewed) and an openly licensed body diagram
-5. Workout logging screen
-6. Today screen and routines (rename, edit, reorder)
-7. HealthKit: steps, then heart rate, then saving workouts
-8. Install on iPhone
+3. ✅ History, per-exercise charts, estimated 1RM and strength trend
+4. ✅ UI redesign: Fitbod-style dark look, shared design pieces, exercise catalogue with muscle groups, app icon
+5. Muscle map: an openly licensed front/back body diagram shaded from the exercises' muscle groups
+6. Workout logging screen
+7. Today screen and routines (add new routines, rename, edit, reorder)
+8. HealthKit: steps, then heart rate, then saving workouts
+9. Install on iPhone

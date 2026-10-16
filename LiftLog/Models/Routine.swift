@@ -24,6 +24,23 @@ final class Routine {
         entries.sorted { $0.order < $1.order }.compactMap(\.exercise)
     }
 
+    /// "push", "pull" or "legs", from the muscles its exercises mainly work;
+    /// nil when the exercises don't know their muscles yet.
+    var suggestedName: String? {
+        var tally: [MuscleGroup: Int] = [:]
+        for exercise in orderedExercises {
+            for muscle in exercise.primary where muscle.group != .cardio && muscle.group != .core {
+                tally[muscle.group, default: 0] += 1
+            }
+        }
+        return tally.max { $0.value < $1.value }?.key.rawValue
+    }
+
+    /// When this routine was last done.
+    var lastDone: Date? {
+        sessions.map(\.start).max()
+    }
+
     /// Adds an exercise to the end of the routine.
     func append(_ exercise: Exercise) {
         let nextOrder = (entries.map(\.order).max() ?? -1) + 1
