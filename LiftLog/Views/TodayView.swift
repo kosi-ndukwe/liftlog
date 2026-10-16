@@ -1,8 +1,10 @@
 import SwiftData
 import SwiftUI
 
-/// Saved routines. Starting a workout and the step count come in later milestones.
+/// Today's steps, a workout in progress, and the saved routines to start one from.
 struct TodayView: View {
+    @AppStorage(HealthSettings.readStepsKey) private var readSteps = false
+    @State private var steps: Int?
     @Query(sort: [SortDescriptor(\Routine.sortOrder), SortDescriptor(\Routine.createdAt)]) private var routines: [Routine]
     @Query(filter: #Predicate<WorkoutSession> { $0.end == nil }, sort: \WorkoutSession.start, order: .reverse)
     private var inProgress: [WorkoutSession]
@@ -18,6 +20,28 @@ struct TodayView: View {
                         .font(.sectionTitle)
                         .foregroundStyle(Palette.textPrimary)
                         .padding(.top, 8)
+
+                    if readSteps {
+                        HStack(spacing: 14) {
+                            Image(systemName: "figure.walk")
+                                .font(.system(size: 22, weight: .semibold))
+                                .foregroundStyle(Palette.accent)
+                                .frame(width: 44, height: 44)
+                                .background(Palette.cardRaised, in: RoundedRectangle(cornerRadius: 12, style: .continuous))
+                            VStack(alignment: .leading, spacing: 2) {
+                                Text("Steps").statLabelStyle()
+                                Text(steps.map { $0.formatted() } ?? "—")
+                                    .font(.statSmallValue)
+                                    .foregroundStyle(Palette.textPrimary)
+                            }
+                            Spacer()
+                            Text("from Apple Health")
+                                .font(.caption)
+                                .foregroundStyle(Palette.textMuted)
+                        }
+                        .card()
+                        .task(id: readSteps) { await loadSteps() }
+                    }
 
                     if let session = inProgress.first {
                         Button {
@@ -96,7 +120,7 @@ struct TodayView: View {
                 RoutineEditorView(routine: nil)
                     .presentationBackground(Palette.background)
             }
-            .fullScreenCover(item: $active) { session in
+            .fullScreenCover(item: $active, onDismiss: { Task { await loadSteps() } }) { session in
                 ActiveWorkoutView(session: session)
                     .preferredColorScheme(.dark)
             }
@@ -115,6 +139,11 @@ struct TodayView: View {
         routines[index].sortOrder = index + offset
         routines[index + offset].sortOrder = index
         try? modelContext.save()
+    }
+
+    private func loadSteps() async {
+        guard readSteps else { return }
+        steps = try? await HealthStore.shared.stepsToday()
     }
 
     private func start(routine: Routine?) {

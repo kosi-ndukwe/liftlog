@@ -8,6 +8,10 @@ struct SettingsView: View {
     @State private var isPickingFile = false
     @State private var importState = ImportState.idle
     @AppStorage("restSeconds") private var restSeconds = 90
+    @AppStorage(HealthSettings.readStepsKey) private var readSteps = false
+    @AppStorage(HealthSettings.readHeartRateKey) private var readHeartRate = false
+    @AppStorage(HealthSettings.saveWorkoutsKey) private var saveWorkouts = false
+    @State private var healthError: String?
 
     enum ImportState {
         case idle
@@ -64,6 +68,22 @@ struct SettingsView: View {
                         .font(.caption)
                         .foregroundStyle(Palette.textSecondary)
 
+                    if HealthStore.isAvailable {
+                        Text("Apple Health")
+                            .statLabelStyle()
+                        VStack(spacing: 14) {
+                            healthToggle("Show today's steps", isOn: $readSteps)
+                            Divider().overlay(Palette.hairline)
+                            healthToggle("Heart rate for each workout", isOn: $readHeartRate)
+                            Divider().overlay(Palette.hairline)
+                            healthToggle("Save workouts to Health", isOn: $saveWorkouts)
+                        }
+                        .card()
+                        Text(healthError ?? "WHOOP writes your heart rate to Health; LiftLog reads the average and peak for each workout's time. Nothing is sent anywhere else.")
+                            .font(.caption)
+                            .foregroundStyle(healthError == nil ? Palette.textSecondary : Palette.accent)
+                    }
+
                     Text("Units")
                         .statLabelStyle()
                     HStack {
@@ -107,6 +127,24 @@ struct SettingsView: View {
                 }
             }
         }
+    }
+
+    private func healthToggle(_ title: String, isOn: Binding<Bool>) -> some View {
+        Toggle(title, isOn: isOn)
+            .font(.bodyText)
+            .foregroundStyle(Palette.textPrimary)
+            .tint(Palette.accent)
+            .onChange(of: isOn.wrappedValue) { _, on in
+                guard on else { return }
+                Task {
+                    do {
+                        try await HealthStore.shared.requestAccess()
+                        healthError = nil
+                    } catch {
+                        healthError = "Health access failed: \(error.localizedDescription)"
+                    }
+                }
+            }
     }
 
     private var isImporting: Bool {

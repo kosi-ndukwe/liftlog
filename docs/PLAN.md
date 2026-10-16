@@ -38,5 +38,5 @@ The built-in exercise list is `LiftLog/Resources/ExerciseCatalogue.json` (about 
 5. ✅ Muscle map: the app's own front/back body diagram, shaded by sets per muscle over a week, month or 6 months
 6. ✅ Workout logging: start a routine (or an empty workout), sets pre-filled from last time, tick sets done, add sets and exercises, rest timer, finish or discard
 7. ✅ Routines: make new ones, rename, add / remove / reorder exercises, reorder routines on Today, delete
-8. HealthKit: steps, then heart rate, then saving workouts
+8. ✅ HealthKit: steps on Today, heart rate (from WHOOP) read for each finished workout, workouts saved to Health; all three are switches in Settings
 9. Install on iPhone
