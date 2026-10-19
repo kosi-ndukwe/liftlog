@@ -8,6 +8,7 @@ struct ActiveWorkoutView: View {
     @Environment(\.modelContext) private var modelContext
     @Environment(\.dismiss) private var dismiss
     @AppStorage("restSeconds") private var restSeconds = 90
+    @State private var rest = RestTimer()
     @State private var editing: EditingExercise?
 
     /// Wraps the exercise so a sheet can be driven by it.
@@ -18,13 +19,13 @@ struct ActiveWorkoutView: View {
     @State private var isPickingExercise = false
     @State private var isConfirmingCancel = false
     @State private var isConfirmingFinish = false
-    @State private var restEndsAt: Date?
 
     var body: some View {
         NavigationStack {
             ScrollView {
                 VStack(alignment: .leading, spacing: 20) {
                     header
+                    RestControls(rest: rest, restSeconds: $restSeconds)
                     ForEach(session.exercisesInOrder, id: \.persistentModelID) { exercise in
                         Button {
                             editing = EditingExercise(exercise: exercise)
@@ -66,7 +67,7 @@ struct ActiveWorkoutView: View {
             }
             .toolbarBackground(Palette.background, for: .navigationBar)
             .sheet(item: $editing) { item in
-                ExerciseLogSheet(session: session, exercise: item.exercise, onSetDone: startRest)
+                ExerciseLogSheet(session: session, exercise: item.exercise, rest: rest, restSeconds: $restSeconds)
                     .presentationDetents([.large])
                     .presentationBackground(Palette.background)
             }
@@ -113,8 +114,8 @@ struct ActiveWorkoutView: View {
 
     @ViewBuilder
     private var bottomBar: some View {
-        if let restEndsAt {
-            RestTimerBar(endsAt: restEndsAt) { self.restEndsAt = nil }
+        if let endsAt = rest.endsAt {
+            RestTimerBar(endsAt: endsAt, onAdjust: { rest.adjust(by: $0) }) { rest.stop() }
                 .padding(.horizontal, 16)
                 .padding(.bottom, 8)
         }
@@ -135,11 +136,6 @@ struct ActiveWorkoutView: View {
             if top.weightLb > 0 { parts.append(Weight.formattedPounds(fromKg: top.weightKg)) }
         }
         return parts.joined(separator: " · ")
-    }
-
-    private func startRest() {
-        guard restSeconds > 0 else { return }
-        restEndsAt = Date.now.addingTimeInterval(TimeInterval(restSeconds))
     }
 
     private func finish(force: Bool = false) {
@@ -164,7 +160,9 @@ struct ActiveWorkoutView: View {
 struct ExerciseLogSheet: View {
     @Bindable var session: WorkoutSession
     let exercise: Exercise
-    var onSetDone: () -> Void = {}
+    var rest: RestTimer
+    @Binding var restSeconds: Int
+    @State private var stopwatch = SetStopwatch()
     @Environment(\.modelContext) private var modelContext
     @Environment(\.dismiss) private var dismiss
     @FocusState private var focused: Field?
@@ -172,6 +170,8 @@ struct ExerciseLogSheet: View {
     enum Field: Hashable {
         case reps(PersistentIdentifier)
         case weight(PersistentIdentifier)
+        case duration(PersistentIdentifier)
+        case distance(PersistentIdentifier)
     }
 
     var body: some View {
@@ -193,14 +193,19 @@ struct ExerciseLogSheet: View {
 
                     HStack {
                         Spacer().frame(width: 44)
-                        Text("Reps").statLabelStyle().frame(maxWidth: .infinity, alignment: .leading)
-                        Text(exercise.isAssisted ? "Assist (lb)" : "Weight (lb)").statLabelStyle().frame(maxWidth: .infinity, alignment: .leading)
+                        if exercise.isTimed {
+                            Text("Time").statLabelStyle().frame(maxWidth: .infinity, alignment: .leading)
+                            Text(exercise.exerciseKind == .cardio ? "Distance (mi)" : "Weight (lb)").statLabelStyle().frame(maxWidth: .infinity, alignment: .leading)
+                        } else {
+                            Text("Reps").statLabelStyle().frame(maxWidth: .infinity, alignment: .leading)
+                            Text(exercise.isAssisted ? "Assist (lb)" : "Weight (lb)").statLabelStyle().frame(maxWidth: .infinity, alignment: .leading)
+                        }
                         Spacer().frame(width: 32)
                     }
 
                     let sets = session.orderedSets.filter { $0.exercise == exercise }
                     ForEach(sets) { set in
-                        SetEditorRow(set: set, focused: $focused, onDone: onSetDone) {
+                        SetEditorRow(set: set, exercise: exercise, focused: $focused, stopwatch: stopwatch, onDone: { rest.start(seconds: restSeconds) }) {
                             modelContext.delete(set)
                             session.sets.removeAll { $0 == set }
                         }
@@ -234,6 +239,17 @@ struct ExerciseLogSheet: View {
                 .padding(.bottom, 24)
             }
             .screenBackground()
+            .safeAreaInset(edge: .bottom) {
+                VStack(spacing: 8) {
+                    if let endsAt = rest.endsAt {
+                        RestTimerBar(endsAt: endsAt, onAdjust: { rest.adjust(by: $0) }) { rest.stop() }
+                    } else if !exercise.isTimed {
+                        RestControls(rest: rest, restSeconds: $restSeconds)
+                    }
+                }
+                .padding(.horizontal, 16)
+                .padding(.bottom, 8)
+            }
             .toolbar {
                 ToolbarItem(placement: .topBarTrailing) {
                     Button { dismiss() } label: {
@@ -257,9 +273,13 @@ struct ExerciseLogSheet: View {
 /// One set: a done hexagon, reps and weight fields.
 struct SetEditorRow: View {
     @Bindable var set: SetEntry
+    let exercise: Exercise
     var focused: FocusState<ExerciseLogSheet.Field?>.Binding
+    var stopwatch: SetStopwatch
     var onDone: () -> Void
     var onDelete: () -> Void
+
+    private var isRunning: Bool { stopwatch.runningSetID == set.persistentModelID }
 
     var body: some View {
         HStack(spacing: 12) {
@@ -277,8 +297,41 @@ struct SetEditorRow: View {
             .buttonStyle(.plain)
             .frame(width: 44)
 
-            field(text: repsBinding, placeholder: "0", field: .reps(set.persistentModelID), keyboard: .numberPad)
-            field(text: weightBinding, placeholder: "0", field: .weight(set.persistentModelID), keyboard: .decimalPad)
+            if exercise.isTimed {
+                // Time: a stopwatch you start and stop, or type mm:ss.
+                if isRunning, let startedAt = stopwatch.startedAt {
+                    TimelineView(.periodic(from: startedAt, by: 1)) { timeline in
+                        timedField(text: ClockFormat.clock(timeline.date.timeIntervalSince(startedAt)), running: true)
+                    }
+                } else {
+                    field(text: durationBinding, placeholder: "0:00", field: .duration(set.persistentModelID), keyboard: .numbersAndPunctuation)
+                }
+                if exercise.exerciseKind == .cardio {
+                    field(text: distanceBinding, placeholder: "0", field: .distance(set.persistentModelID), keyboard: .decimalPad)
+                } else {
+                    field(text: weightBinding, placeholder: "0", field: .weight(set.persistentModelID), keyboard: .decimalPad)
+                }
+                Button {
+                    if isRunning {
+                        set.durationSeconds = (stopwatch.stop()).rounded()
+                        set.isCompleted = true
+                        onDone()
+                    } else {
+                        focused.wrappedValue = nil
+                        stopwatch.start(set.persistentModelID)
+                    }
+                } label: {
+                    Image(systemName: isRunning ? "stop.fill" : "play.fill")
+                        .font(.system(size: 15, weight: .bold))
+                        .foregroundStyle(isRunning ? Palette.background : Palette.accent)
+                        .frame(width: 44, height: 44)
+                        .background(isRunning ? Palette.accent : Palette.cardRaised, in: Circle())
+                }
+                .buttonStyle(.plain)
+            } else {
+                field(text: repsBinding, placeholder: "0", field: .reps(set.persistentModelID), keyboard: .numberPad)
+                field(text: weightBinding, placeholder: "0", field: .weight(set.persistentModelID), keyboard: .decimalPad)
+            }
 
             Menu {
                 Toggle("Warm-up", isOn: $set.isWarmup)
@@ -312,6 +365,33 @@ struct SetEditorRow: View {
             .focused(focused, equals: field)
     }
 
+    /// The time field while the stopwatch runs: same look, not editable.
+    private func timedField(text: String, running: Bool) -> some View {
+        Text(text)
+            .font(.system(size: 24, weight: .semibold, design: .monospaced).italic())
+            .foregroundStyle(Palette.accent)
+            .padding(.horizontal, 14)
+            .frame(maxWidth: .infinity, minHeight: 56, alignment: .leading)
+            .background(Palette.card, in: RoundedRectangle(cornerRadius: 12, style: .continuous))
+            .overlay(RoundedRectangle(cornerRadius: 12, style: .continuous).stroke(Palette.accent, lineWidth: 1))
+    }
+
+    private var durationBinding: Binding<String> {
+        Binding(
+            get: { set.durationSeconds == 0 ? "" : ClockFormat.clock(set.durationSeconds) },
+            set: { if let seconds = ClockFormat.parseClock($0) { set.durationSeconds = seconds } }
+        )
+    }
+
+    private var distanceBinding: Binding<String> {
+        Binding(
+            get: { set.distanceMeters == 0 ? "" : (set.distanceMeters / 1_609.344).formatted(.number.precision(.fractionLength(0...2))) },
+            set: { text in
+                if let miles = Double(text.replacingOccurrences(of: ",", with: ".")) { set.distanceMeters = miles * 1_609.344 } else if text.isEmpty { set.distanceMeters = 0 }
+            }
+        )
+    }
+
     private var repsBinding: Binding<String> {
         Binding(
             get: { set.reps == 0 ? "" : "\(set.reps)" },
@@ -329,9 +409,101 @@ struct SetEditorRow: View {
     }
 }
 
+/// The rest countdown, shared by the workout screen and the set sheet so
+/// both show the same timer.
+@Observable
+final class RestTimer {
+    var endsAt: Date?
+
+    func start(seconds: Int) {
+        guard seconds > 0 else { return }
+        endsAt = Date.now.addingTimeInterval(TimeInterval(seconds))
+    }
+
+    func stop() { endsAt = nil }
+
+    /// Adds or takes away time from a running countdown.
+    func adjust(by seconds: Int) {
+        guard let endsAt else { return }
+        self.endsAt = max(Date.now, endsAt.addingTimeInterval(TimeInterval(seconds)))
+    }
+}
+
+/// Which set's stopwatch is running, for timed exercises.
+@Observable
+final class SetStopwatch {
+    var runningSetID: PersistentIdentifier?
+    var startedAt: Date?
+
+    func start(_ id: PersistentIdentifier) {
+        runningSetID = id
+        startedAt = .now
+    }
+
+    /// Stops and returns the seconds that passed.
+    @discardableResult
+    func stop() -> TimeInterval {
+        defer { runningSetID = nil; startedAt = nil }
+        return startedAt.map { Date.now.timeIntervalSince($0) } ?? 0
+    }
+}
+
+/// Pick the rest length and start a rest by hand, right where you log sets.
+struct RestControls: View {
+    var rest: RestTimer
+    @Binding var restSeconds: Int
+
+    static let choices = [0, 30, 60, 90, 120, 180, 300]
+
+    var body: some View {
+        HStack(spacing: 10) {
+            Image(systemName: "timer")
+                .foregroundStyle(Palette.textSecondary)
+            Text("Rest")
+                .font(.bodyText)
+                .foregroundStyle(Palette.textPrimary)
+            Spacer()
+            Menu {
+                Picker("Rest", selection: $restSeconds) {
+                    ForEach(Self.choices, id: \.self) { seconds in
+                        Text(seconds == 0 ? "Off" : ClockFormat.clock(TimeInterval(seconds))).tag(seconds)
+                    }
+                }
+            } label: {
+                HStack(spacing: 4) {
+                    Text(restSeconds == 0 ? "Off" : ClockFormat.clock(TimeInterval(restSeconds)))
+                        .monospacedDigit()
+                    Image(systemName: "chevron.up.chevron.down")
+                        .font(.system(size: 11, weight: .semibold))
+                }
+                .font(.system(size: 16, weight: .semibold))
+                .foregroundStyle(Palette.accent)
+                .padding(.horizontal, 12)
+                .padding(.vertical, 8)
+                .background(Palette.cardRaised, in: Capsule())
+            }
+            Button {
+                rest.start(seconds: restSeconds)
+            } label: {
+                Text("Start")
+                    .font(.system(size: 16, weight: .bold))
+                    .foregroundStyle(Palette.textOnAccent)
+                    .padding(.horizontal, 16)
+                    .padding(.vertical, 8)
+                    .background(Palette.accent, in: Capsule())
+            }
+            .buttonStyle(.plain)
+            .disabled(restSeconds == 0)
+            .opacity(restSeconds == 0 ? 0.4 : 1)
+        }
+        .card(padding: 12)
+    }
+}
+
 /// A countdown pill after a set: "Rest 1:30", with a skip button.
 struct RestTimerBar: View {
     let endsAt: Date
+    var onAdjust: ((Int) -> Void)? = nil
     let onDismiss: () -> Void
 
     var body: some View {
@@ -342,6 +514,11 @@ struct RestTimerBar: View {
                 Text(remaining > 0 ? String(format: "Rest %d:%02d", remaining / 60, remaining % 60) : "Rest over")
                     .monospacedDigit()
                 Spacer()
+                if remaining > 0, let onAdjust {
+                    Button("+30s") { onAdjust(30) }
+                        .font(.system(size: 15, weight: .semibold))
+                        .padding(.trailing, 8)
+                }
                 Button(remaining > 0 ? "Skip" : "OK", action: onDismiss)
                     .font(.system(size: 16, weight: .bold))
             }
@@ -355,4 +532,32 @@ struct RestTimerBar: View {
             }
         }
     }
+}
+
+/// Reads and writes "m:ss" times. Plain functions, safe from any thread
+/// (the view they used to live in is main-actor only, which tests tripped on).
+enum ClockFormat {
+    /// "1:30" or "12:05".
+    static func clock(_ seconds: TimeInterval) -> String {
+        let total = max(0, Int(seconds))
+        return total >= 3600
+            ? String(format: "%d:%02d:%02d", total / 3600, total / 60 % 60, total % 60)
+            : String(format: "%d:%02d", total / 60, total % 60)
+    }
+
+    /// Reads "1:30", "90" (seconds) or "1.5" (minutes) into seconds.
+    static func parseClock(_ text: String) -> TimeInterval? {
+        let trimmed = text.trimmingCharacters(in: .whitespaces)
+        if trimmed.isEmpty { return 0 }
+        let parts = trimmed.split(separator: ":").map { Double($0.trimmingCharacters(in: .whitespaces)) }
+        if parts.contains(where: { $0 == nil }) { return nil }
+        let numbers = parts.compactMap { $0 }
+        switch numbers.count {
+        case 1: return trimmed.contains(".") ? numbers[0] * 60 : numbers[0]
+        case 2: return numbers[0] * 60 + numbers[1]
+        case 3: return numbers[0] * 3600 + numbers[1] * 60 + numbers[2]
+        default: return nil
+        }
+    }
+
 }

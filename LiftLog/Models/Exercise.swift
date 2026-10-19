@@ -15,6 +15,10 @@ final class Exercise {
     var equipment: String = ""
     /// How the exercise is logged: see `ExerciseKind`.
     var kind: String = ""
+    /// Step-by-step how-to, one step per line. From the built-in catalogue.
+    var instructions: [String] = []
+    /// Bundled photo file names (start and end position), e.g. "Plank__0.jpg".
+    var imageNames: [String] = []
 
     // Kept on the exercise so the list doesn't have to load every set.
     // The importer updates them; `Startup` fills them in for older data.
@@ -53,6 +57,9 @@ final class Exercise {
     /// Assisted pull-ups and dips: the "weight" is help from the machine, so
     /// less is stronger.
     var isAssisted: Bool { exerciseKind == .assisted }
+
+    /// Planks, stretches and cardio are logged by time rather than reps.
+    var isTimed: Bool { exerciseKind == .timed || exerciseKind == .cardio }
 
     var primary: [Muscle] { primaryMuscles.compactMap(Muscle.init(rawValue:)) }
     var secondary: [Muscle] { secondaryMuscles.compactMap(Muscle.init(rawValue:)) }

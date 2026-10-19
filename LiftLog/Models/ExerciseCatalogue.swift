@@ -12,6 +12,8 @@ enum ExerciseCatalogue {
         var primary: [String]
         var secondary: [String]
         var kind: String
+        var instructions: [String]?
+        var images: [String]?
     }
 
     static func load() throws -> [Entry] {
@@ -36,12 +38,16 @@ enum ExerciseCatalogue {
                 if exercise.secondaryMuscles.isEmpty { exercise.secondaryMuscles = entry.secondary }
                 if exercise.equipment.isEmpty { exercise.equipment = entry.equipment }
                 if exercise.kind.isEmpty { exercise.kind = entry.kind }
+                if exercise.instructions.isEmpty, let steps = entry.instructions { exercise.instructions = steps }
+                if exercise.imageNames.isEmpty, let images = entry.images { exercise.imageNames = images }
             } else {
                 let exercise = Exercise(name: entry.name)
                 exercise.primaryMuscles = entry.primary
                 exercise.secondaryMuscles = entry.secondary
                 exercise.equipment = entry.equipment
                 exercise.kind = entry.kind
+                exercise.instructions = entry.instructions ?? []
+                exercise.imageNames = entry.images ?? []
                 context.insert(exercise)
                 added += 1
             }
