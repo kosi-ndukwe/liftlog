@@ -28,7 +28,7 @@ Dark, card-based screens modelled on Fitbod's feel: see [design.md](design.md). 
 - `WorkoutSession`: start, end, routine, average/peak heart rate, cached set count / volume / exercise names
 - `SetEntry`: session, exercise, order, reps, weight (kg), duration, distance, isWarmup, note, multiplier
 
-The built-in exercise list is `LiftLog/Resources/ExerciseCatalogue.json` (about 440 exercises with muscles). It's added to the database on launch, and imported exercises get their muscles from it.
+The built-in exercise list is `LiftLog/Resources/ExerciseCatalogue.json` (about 1,230 exercises with muscles, equipment, how-to steps and photo file names; photos live in `LiftLog/Resources/ExerciseImages`). It's added to the database on launch, and imported exercises get their muscles from it.
 
 ## Milestones
 1. ✅ Xcode project skeleton and data model
@@ -40,3 +40,4 @@ The built-in exercise list is `LiftLog/Resources/ExerciseCatalogue.json` (about 
 7. ✅ Routines: make new ones, rename, add / remove / reorder exercises, reorder routines on Today, delete
 8. ✅ HealthKit: steps on Today, heart rate (from WHOOP) read for each finished workout, workouts saved to Health; all three are switches in Settings
 9. ✅ Install on iPhone: see [install.md](install.md)
+10. ✅ Exercise library and workout timers: 1,234 exercises with photos and step-by-step instructions (merged from the public-domain [free-exercise-db](https://github.com/yuhonas/free-exercise-db)), a redrawn body diagram, a rest timer you can set and start on the workout screen, and a stopwatch for timed exercises

@@ -18,6 +18,9 @@ struct ExerciseDetailView: View {
                 if !exercise.primary.isEmpty {
                     musclesCard
                 }
+                if !exercise.imageNames.isEmpty || !exercise.instructions.isEmpty {
+                    HowToCard(exercise: exercise)
+                }
                 SegmentedPill(options: Tab.allCases, selection: $tab) { $0 == .results ? "Results" : "Trends" }
                     .padding(.top, 4)
 
